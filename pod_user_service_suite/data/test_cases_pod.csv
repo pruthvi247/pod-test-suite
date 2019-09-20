@@ -1,0 +1,47 @@
+﻿ID,TestCase,METHOD,URL,api_Input,api_output,status_code,Notes
+F0001,create a user,POST,,"{
+  ""address"": {
+    ""city"": ""blr"",
+    ""country"": ""ind"",
+    ""doorNo"": ""24"",
+    ""landmark"": ""mcd"",
+    ""state"": ""karnataka"",
+    ""street"": ""2ndcross"",
+    ""zipCode"": ""56006""
+  },
+  ""dateOfBirth"": ""24-07-1991"",
+  ""emailId"": ""pruthvikumar247@gmail.com"",
+  ""firstName"": ""pruthvi"",
+  ""lastName"": ""kumar"",
+  ""phno"": ""9916893441"",
+  ""vehicleDetails"": {
+    ""bodyType"": ""hatchback"",
+    ""colour"": ""white"",
+    ""make"": ""maruthi"",
+    ""model"": ""swift"",
+    ""regNo"": ""ap26 3356""
+  }
+}","{
+  ""firstName"": ""pruthvi"",
+  ""lastName"": ""kumar"",
+  ""phno"": ""9916893441"",
+  ""emailId"": ""pruthvikumar247@gmail.com"",
+  ""dateOfBirth"": ""24-07-1991"",
+  ""address"": {
+    ""doorNo"": ""24"",
+    ""street"": ""2ndcross"",
+    ""landmark"": ""mcd"",
+    ""city"": ""blr"",
+    ""state"": ""karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": ""56006""
+  },
+  ""vehicleDetails"": {
+    ""make"": ""maruthi"",
+    ""colour"": ""white"",
+    ""model"": ""swift"",
+    ""regNo"": ""ap26 3356"",
+    ""bodyType"": ""hatchback""
+  },
+  ""id"": ""2c147c00-4cc1-4e6b-9e4b-1a983a2bf422""
+}",201,

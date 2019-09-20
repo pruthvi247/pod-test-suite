@@ -1,0 +1,18 @@
+{
+  "TEST": {
+    "IP_TEST_DOC_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/test_cases_pod.csv",
+    "OP_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/",
+    "USER_SERVICE_HOST_IP": "https://localhost:8080",
+    "LOGGING_LEVEL": 20
+  },
+  "DEV": {
+    "IP_TESTDOC_FILEPATH": "/home/pruthvi/Documents/docs/synapseTesting/synapseTestCases_new_updated_backup.csv",
+    "OP_FILEPATH": "/home/pruthvi/Documents/docs/synapseTesting/synapseTestCases_Status.csv",
+    "USER_SERVICE_HOST_IP": "https://52.66.172.126:9095"
+  },
+  "URL_PATH": {
+    "ENTITY_URL": "/api/v1/entity/",
+    "DATA_MODEL_URL": "/api/v1/data-model/",
+    "ATTRIBUTE_DEF_URL": "/api/v1/attribute-definition/"
+  }
+}
