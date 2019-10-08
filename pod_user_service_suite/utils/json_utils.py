@@ -9,8 +9,8 @@ import os
 logging.getLogger().setLevel(10)
 logger = logging.getLogger(__name__)
 
-def load_properties_from_json() :
-    with open('pod_user_service_suite/config/user_service_properties.json','r') as f:
+def load_properties_from_json(filepath) :
+    with open(filepath,'r') as f:
         logging.debug("reading json properties file from ::{}".format('pod_user_service_suite/config/user_service_properties.json'))
         confprop = json.load(f)
     return confprop

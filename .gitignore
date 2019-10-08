@@ -20,8 +20,10 @@
 .classpath
 .project
 .settings/
-
-
+#pycharm
+.idea/*
+venv/*
+*.pyc
 # Package Files #
 *.jar
 *.war
