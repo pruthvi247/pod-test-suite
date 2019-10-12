@@ -2,8 +2,9 @@
   "TEST": {
     "IP_TEST_DOC_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/test_cases_pod.csv",
     "OP_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/",
-    "USER_SERVICE_HOST_IP": "https://localhost:8080",
-    "LOGGING_LEVEL": 20
+    "USER_SERVICE_HOST_IP": "http://localhost:8082",
+    "LOGGING_LEVEL": 20,
+    "HEADERS" :"{\"Content-Type\": \"application/json\"}"
   },
   "DEV": {
     "IP_TESTDOC_FILEPATH": "/home/pruthvi/Documents/docs/synapseTesting/synapseTestCases_new_updated_backup.csv",

@@ -15,5 +15,23 @@ def load_properties_from_json(filepath) :
         confprop = json.load(f)
     return confprop
 
+
+def compare_json(json1, json2):
+    #Compare all keys
+    for key in json1.keys():
+        #if key exist in json2:
+        if key in json2.keys():
+            #If subjson
+            if type(json1[key]) == dict:
+                compare_json(json1[key], json2[key])
+            else:
+                if json1[key] != json2[key]:
+                    print("These entries are different:")
+                    print(json1[key])
+                    print(json2[key])
+        else:
+            print("found new key in json1 %r" % key)
+    return True
+
 if __name__== "__main__":
     print(type(load_properties_from_json()))
