@@ -13,4 +13,5 @@ logger.info("info logs")
 
 def json_validation(http_out_json,expected_output_json):
     logging.debug("validating output and expected output")
-    compare_json(json1=expected_output_json,json2=http_out_json)
+    result_keys = compare_json(json1=expected_output_json,json2=http_out_json)
+    return result_keys

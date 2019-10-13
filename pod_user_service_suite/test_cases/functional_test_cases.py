@@ -28,7 +28,9 @@ for index, row in pd_input.iterrows():
         print("its a post method{}".format(row["ID"]))
         http_output =invoke_post_call(ip=props["TEST"]["USER_SERVICE_HOST_IP"],url=row['URL'],
                          headers=headers,input_palyload=row["API_INPUT"])
-        json_validation(http_out_json=http_output.json(),expected_output_json=json.loads(row["EXPECTED_OUTPUT"]))
+        diff_keys = json_validation(http_out_json=http_output.json(),expected_output_json=json.loads(row["EXPECTED_OUTPUT"]))
+        for k in diff_keys.keys():
+            print("keys and values are {} :{}".format(k,diff_keys[k]))
         # json_validation(http_out_json=row["API_INPUT"],expected_output_json=row["EXPECTED_OUTPUT"])
 
 
