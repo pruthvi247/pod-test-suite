@@ -15,9 +15,6 @@ def load_properties_from_json(filepath) :
         confprop = json.load(f)
     return confprop
 
-
-
-
 def compare_json(json1, json2,result=None):
 
     if result is None:
@@ -34,14 +31,17 @@ def compare_json(json1, json2,result=None):
                 if json1[key] != json2[key]:
                     # print("These entries are different:")
                     result[key] = [json1[key],json2[key]]
-                    # print(json1[key])
-                    # print(json2[key])
         else:
             print("found new key in json1 %r" % key)
     return result
 
 
-#
+def make_dict(filepath) :
+    with open(filepath,'r') as f:
+        logging.debug("reading json properties file from ::{}".format('pod_user_service_suite/config/user_service_properties.json'))
+        confprop = json.load(f)
+    return confprop
+
 # def compare_json(json1, json2):
 #     dict_keys={}
 #

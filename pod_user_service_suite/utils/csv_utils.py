@@ -12,3 +12,8 @@ logger = logging.getLogger(__name__)
 def csv_pandas(filepath):
     logger.debug("Reading input test case csv : {}".format(filepath))
     return pd.read_csv(filepath)
+
+def write_to_csv(filepath,dict):
+    logger.debug("writing status output to csv : {}".format(filepath))
+    pd.DataFrame(dict).to_csv(filepath)
+    return pd.read_csv(filepath)

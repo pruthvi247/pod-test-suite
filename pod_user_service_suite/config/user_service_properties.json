@@ -1,7 +1,7 @@
 {
   "TEST": {
     "IP_TEST_DOC_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/test_cases_pod.csv",
-    "OP_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/",
+    "OP_FILEPATH": "/Users/pruthvi.kumar/Documents/workspace/eclipse-workspace/pod-test-suite/pod_user_service_suite/data/user_service_report.csv",
     "USER_SERVICE_HOST_IP": "http://localhost:8082",
     "LOGGING_LEVEL": 20,
     "HEADERS" :"{\"Content-Type\": \"application/json\"}"
