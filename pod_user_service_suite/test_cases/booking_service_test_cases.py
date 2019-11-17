@@ -43,12 +43,12 @@ for index, row in pd_input.iterrows():
     logger.info("Executing test : {}".format(row["ID"]))
     if str(row["METHOD"]).lower() == 'POST'.lower():
         print()
-        # http_output =invoke_post_call(ip=props["TEST"]["USER_SERVICE_HOST_IP"],url=row['URL'],
-        #                  headers=headers,input_palyload=row["API_INPUT"])
-        #
-        # # compares expected json with http output
-        # diff_dict = json_validation(http_out_json=http_output.json(),expected_output_json=json.loads(row["EXPECTED_OUTPUT"]))
-        # prepare_output_dict(diff_dict,testID=row['ID'])
+        http_output =invoke_post_call(ip=props["TEST"]["USER_SERVICE_HOST_IP"],url=row['URL'],
+                         headers=headers,input_palyload=row["API_INPUT"])
+
+        # compares expected json with http output
+        diff_dict = json_validation(http_out_json=http_output.json(),expected_output_json=json.loads(row["EXPECTED_OUTPUT"]))
+        prepare_output_dict(diff_dict,testID=row['ID'])
 
     elif row["METHOD"] == 'GET':
         print("its a get method{}".format(row["ID"]))

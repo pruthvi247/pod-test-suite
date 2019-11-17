@@ -29,6 +29,10 @@ def compare_json(json1, json2,result=None):
             if type(json1[key]) == dict:
                 dict_keys = {}
                 compare_json(json1[key], json2[key],result)
+            elif type(json1[key]) == list:
+                if type(json1[key][0]) == dict:
+                    compare_json(json1[key][0], json2[key][0], result)
+
             else:
                 if json1[key] != json2[key]:
                     # print("These entries are different:")
