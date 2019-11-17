@@ -16,6 +16,8 @@ def load_properties_from_json(filepath) :
     return confprop
 
 def compare_json(json1, json2,result=None):
+    # json1 is expected output
+    # json2 is http output
 
     if result is None:
         result={}

@@ -15,5 +15,7 @@ def csv_pandas(filepath):
 
 def write_to_csv(filepath,dict):
     logger.debug("writing status output to csv : {}".format(filepath))
-    pd.DataFrame(dict).to_csv(filepath)
+    # pd.DataFrame(dict).to_csv(filepath)
+    pdseries = pd.Series(dict).to_frame()
+    pd.DataFrame(pdseries).to_csv(filepath)
     return pd.read_csv(filepath)

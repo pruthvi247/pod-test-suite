@@ -12,18 +12,18 @@ logger.info("info logs")
 
 
 def invoke_post_call(ip,url,input_palyload,headers):
-    print("inside invoke_post_call")
-    # print(ip)
-    # print(url)
-    # print(input_palyload)
-    # print(headers)
     final_url = str(ip)+str(url)
-    http_output=requests.post(final_url, data=json.dumps(json.loads(input_palyload)), headers=headers)
+    http_output = requests.post(final_url, data=json.dumps(json.loads(input_palyload)), headers=headers)
     print(http_output.status_code)
     print(http_output.json())
 
 
     return http_output
-    # print(http_output)
-    # print("=======>>>>> {}".format(type(input_payload)))
-    # print("=======>>>>> {}".format(type(input_json)))
+
+def invoke_get_call(ip,url,headers):
+    print("inside invoke_get_call")
+    final_url = str(ip)+str(url)
+    http_output = requests.get(final_url, headers=headers)
+
+
+    return http_output
