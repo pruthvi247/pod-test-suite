@@ -36,7 +36,15 @@ def compare_json(json1, json2,result=None):
             else:
                 if json1[key] != json2[key]:
                     # print("These entries are different:")
-                    result[key] = [json1[key],json2[key]]
+                    if key in result:
+                        temp_lst = []
+                        temp_lst.append(result[key])
+                        temp_lst.append(json1[key])
+                        temp_lst.append(json2[key])
+                        result[key]= temp_lst
+
+                    else:
+                        result[key] = [json1[key],json2[key]]
         else:
             print("found new key in json1 %r" % key)
     return result

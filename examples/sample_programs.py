@@ -92,7 +92,7 @@ def validate_json(input_json):
 
 # temp_test()
 # invoke_post_call()
-invoke_get_call()
+# invoke_get_call()
 
 # validate_json(json.loads(pd_input.iloc[0, 4]))
 
@@ -104,3 +104,4 @@ invoke_get_call()
 #
 # first_test(input)
 print("DONE !!!")
+
