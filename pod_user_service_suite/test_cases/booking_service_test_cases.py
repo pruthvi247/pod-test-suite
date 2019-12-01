@@ -3,6 +3,9 @@ import sys
 import logging
 import requests
 import json
+import argparse
+
+
 from pymongo import MongoClient
 
 
@@ -17,6 +20,11 @@ from pod_user_service_suite.commons.http_invocations import invoke_put_call
 from pod_user_service_suite.commons.validations import json_validation
 from pod_user_service_suite.utils.csv_utils import write_to_csv
 
+#
+# parser = argparse.ArgumentParser(description='Booking service tests')
+# parser.add_argument("--env",default="TEST")
+
+
 props = load_properties_from_json(filepath='pod_user_service_suite/config/booking_service_properties.json')
 logging.getLogger().setLevel(props["TEST"]["LOGGING_LEVEL"]) # setting log levels = CRITICAL = 50,FATAL = CRITICAL,ERROR = 40,WARNING = 30,WARN = WARNING,INFO = 20,DEBUG = 10,NOTSET = 0
 logger = logging.getLogger(__name__)
@@ -30,8 +38,9 @@ final_report ={}
 # this function will prepare a dict for final output
 def prepare_output_dict(diff_dict,testID):
     if bool(diff_dict):
-        tempvalue = '{"status":"fail","diff":' + "\"" + "{}".format(diff_dict) + "\""
-        final_report[str(testID)] = tempvalue
+        # tempvalue = '{"status":"fail","diff":' + "\"" + "{}".format(diff_dict) + "\"}"
+        tempvalue = '{"status":"fail","diff":' + "{}".format(diff_dict)+"}"
+        final_report[str(testID)] = str(tempvalue)
 
     else:
         final_report[str(testID)] = "{\"status\" : \"pass\"}"
@@ -75,7 +84,8 @@ for index, row in pd_input.iterrows():
 write_to_csv(props["TEST"]["OP_FILEPATH"],final_report)
 
 def clean_booking_collection():
-    client = MongoClient('mongodb://localhost:27017/')
+
+    client = MongoClient(str(props["TEST"]["MOGO_DB_URL"]))
     mydatabase = client['test']
     mycollection = mydatabase['booking']
 
