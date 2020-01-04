@@ -19,6 +19,7 @@ from pod_user_service_suite.commons.http_invocations import invoke_get_call
 from pod_user_service_suite.commons.http_invocations import invoke_put_call
 from pod_user_service_suite.commons.validations import json_validation
 from pod_user_service_suite.utils.csv_utils import write_to_csv
+from pod_user_service_suite.utils.csv_utils import write_to_html
 
 #
 # parser = argparse.ArgumentParser(description='Booking service tests')
@@ -82,6 +83,8 @@ for index, row in pd_input.iterrows():
 
 # writing final_report to csv
 write_to_csv(props["TEST"]["OP_FILEPATH"],final_report)
+write_to_html(props["TEST"]["OP_FILEPATH"])
+
 
 def clean_booking_collection():
 
