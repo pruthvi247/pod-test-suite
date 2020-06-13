@@ -1,0 +1,213 @@
+ID,TESTCASE,METHOD,URL,API_INPUT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES,,
+P0001,create parking spot,POST,/parkingspot,"{
+  ""address"": {
+    ""city"": ""banglore"",
+    ""country"": ""ind"",
+    ""doorNo"": ""55"",
+    ""landmark"": ""mcd"",
+    ""state"": ""karnataka"",
+    ""street"": ""hsr"",
+    ""zipCode"": ""56006""
+  },
+  ""code"": ""spot101"",
+  ""description"": ""testing"",
+  ""geoLocation"": {
+    ""latitude"": 12.912639,
+    ""longitude"": 77.638010
+  },
+  ""owner"": {
+    ""firstName"": ""owner101"",
+    ""id"": ""owner101"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner101@testing.com""
+  },
+  ""photos"": [
+    {
+      ""fileName"": ""/path"",
+      ""id"": ""/filename"",
+      ""ownerId"": ""owner101""
+    }
+  ],
+  ""size"": ""HATCHBACK"",
+  ""type"": ""PLATINUM""
+}","{  ""code"": ""string"",
+  ""type"": ""PLATINUM"",
+  ""geoLocation"": {
+    ""latitude"": 12.912639,
+    ""longitude"": 77.63801
+  },
+  ""address"": {
+    ""doorNo"": ""55"",
+    ""street"": ""hsr"",
+    ""landmark"": ""mcd"",
+    ""city"": ""banglore"",
+    ""state"": ""karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": ""56006""
+  },
+  ""photos"": [
+    {
+      ""id"": ""/filename"",
+      ""fileName"": ""/path"",
+      ""ownerId"": ""owner101""
+    }
+  ],
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""id"": ""owner101"",
+    ""firstName"": ""owner101"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner101@testing.com""
+  },
+  ""description"": ""testing""
+}",201,creating first parking spot,,
+,,,,"{
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""ind"",
+		""doorNo"": ""55"",
+		""landmark"": ""ayyapa temple"",
+		""state"": ""andhra"",
+		""street"": ""durganagar"",
+		""zipCode"": ""517002""
+	},
+	""code"": ""spot102"",
+	""description"": ""testing"",
+	""geoLocation"": {
+		""latitude"": 13.196978,
+		""longitude"": 79.090692
+	},
+	""owner"": {
+		""firstName"": ""owner102"",
+		""id"": ""owner102"",
+		""lastName"": ""string"",
+		""userId"": ""owner102@testing.com""
+	},
+	""photos"": [{
+		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
+		""id"": ""/filename"",
+		""ownerId"": ""owner102""
+	}],
+	""size"": ""HATCHBACK"",
+	""type"": ""PLATINUM""
+}",,,ayyappa temple,,
+,,,,"{
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""ind"",
+		""doorNo"": ""55"",
+		""landmark"": ""vijay durga petrol pum"",
+		""state"": ""andhra"",
+		""street"": ""durganagar"",
+		""zipCode"": ""517002""
+	},
+	""code"": ""spot103"",
+	""description"": ""testing"",
+	""geoLocation"": {
+		""latitude"": 13.196868,
+		""longitude"": 79.093518
+	},
+	""owner"": {
+		""firstName"": ""owner103"",
+		""id"": ""owner103"",
+		""lastName"": ""string"",
+		""userId"": ""owner103@testing.com""
+	},
+	""photos"": [{
+		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
+		""id"": ""/filename"",
+		""ownerId"": ""owner103""
+	}],
+	""size"": ""HATCHBACK"",
+	""type"": ""PLATINUM""
+}",,,vijaya durga petrol station,,
+,,,,"{
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""ind"",
+		""doorNo"": ""55"",
+		""landmark"": ""Durga temple"",
+		""state"": ""andhra"",
+		""street"": ""durganagar"",
+		""zipCode"": ""517002""
+	},
+	""code"": ""spot104"",
+	""description"": ""testing"",
+	""geoLocation"": {
+		""latitude"": 13.197317,
+		""longitude"": 79.093845
+	},
+	""owner"": {
+		""firstName"": ""owner104"",
+		""id"": ""owner104"",
+		""lastName"": ""string"",
+		""userId"": ""owner104@testing.com""
+	},
+	""photos"": [{
+		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipNhygtMc1wNzN4n6txZLzIhgJ-QZ044R4axyFZX=w90-h90-n-k-no"",
+		""id"": ""/filename"",
+		""ownerId"": ""owner104""
+	}],
+	""size"": ""HATCHBACK"",
+	""type"": ""PLATINUM""
+}",,,Durga temple,,
+,,,,"{
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""ind"",
+		""doorNo"": ""55"",
+		""landmark"": ""vinayaka temple"",
+		""state"": ""andhra"",
+		""street"": ""durganagar"",
+		""zipCode"": ""517002""
+	},
+	""code"": ""spot105"",
+	""description"": ""testing"",
+	""geoLocation"": {
+		""latitude"": 13.195908,
+		""longitude"": 79.088291
+	},
+	""owner"": {
+		""firstName"": ""owner105"",
+		""id"": ""owner105"",
+		""lastName"": ""string"",
+		""userId"": ""owner105@testing.com""
+	},
+	""photos"": [{
+		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipPGoxAP7eK6C44vSIx4SdhXdp78qiZz2qKp8-o1=w90-h90-n-k-no"",
+		""id"": ""/filename"",
+		""ownerId"": ""owner105""
+	}],
+	""size"": ""SEDAN"",
+	""type"": ""PLATINUM""
+}",,,vinayaka temple,,"13.1952499,79.0904714 - home location"
+,,,,"{
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""ind"",
+		""doorNo"": ""55"",
+		""landmark"": ""park colony"",
+		""state"": ""andhra"",
+		""street"": ""durganagar"",
+		""zipCode"": ""517002""
+	},
+	""code"": ""spot106"",
+	""description"": ""testing"",
+	""geoLocation"": {
+		""latitude"": 13.193934,
+		""longitude"": 79.089250
+	},
+	""owner"": {
+		""firstName"": ""owner106"",
+		""id"": ""owner105"",
+		""lastName"": ""string"",
+		""userId"": ""owner106@testing.com""
+	},
+	""photos"": [{
+		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOfv3DSTkjsgvwCsUe_flDr4DBXneEVR1hWQCvR=w90-h90-n-k-no"",
+		""id"": ""/filename"",
+		""ownerId"": ""owner106""
+	}],
+	""size"": ""SEDAN"",
+	""type"": ""PLATINUM""
+}",,,,,
