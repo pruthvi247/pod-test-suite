@@ -60,10 +60,10 @@ B0004,get booking by customer id,GET,/booking?customerId=cust101,,"{
   ""items"": [
     {      ""code"": ""book123"",
       ""owner"": {
-        ""userId"": ""owner102""
+        ""userId"": ""owner101""
       },
       ""customer"": {
-        ""userId"": ""cust102""
+        ""userId"": ""cust101""
       },
       ""dateOfBooking"": ""2019-11-14T09:22:25.619Z"",
       ""parkingStartDate"": ""2019-11-13T09:21:25.619Z"",

@@ -13,6 +13,11 @@
 # BlueJ files
 *.ctxt
 
+## report of test case
+
+*_report.csv
+*_report.html
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 

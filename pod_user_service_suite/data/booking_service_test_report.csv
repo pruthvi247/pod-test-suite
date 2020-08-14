@@ -1,6 +1,0 @@
-,output
-B0001,"{""status"" : ""pass""}"
-B0002,"{""status"" : ""pass""}"
-B0003,"{""status"" : ""pass""}"
-B0004,"{""status"":""fail"",""diff"":{'userId': [['owner102', 'owner101'], 'cust102', 'cust101'], 'parkingSpotId': ['spot102', 'spot101']}}"
-B0005,"{""status"" : ""pass""}"

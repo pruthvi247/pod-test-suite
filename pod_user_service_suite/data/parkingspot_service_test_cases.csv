@@ -30,7 +30,7 @@ P0001,create parking spot,POST,/parkingspot,"{
   ],
   ""size"": ""HATCHBACK"",
   ""type"": ""PLATINUM""
-}","{  ""code"": ""string"",
+}","{  ""code"": ""spot101"",
   ""type"": ""PLATINUM"",
   ""geoLocation"": {
     ""latitude"": 12.912639,
@@ -61,7 +61,7 @@ P0001,create parking spot,POST,/parkingspot,"{
   },
   ""description"": ""testing""
 }",201,creating first parking spot,,
-,,,,"{
+P0002,,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -90,8 +90,38 @@ P0001,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""HATCHBACK"",
 	""type"": ""PLATINUM""
-}",,,ayyappa temple,,
-,,,,"{
+}","{
+
+        ""code"": ""spot102"",
+        ""type"": ""PLATINUM"",
+        ""geoLocation"": {
+                ""latitude"": 13.196978,
+                ""longitude"": 79.090692
+        },
+        ""address"": {
+                ""doorNo"": ""55"",
+                ""street"": ""durganagar"",
+                ""landmark"": ""ayyapa temple"",
+                ""city"": ""chittoor"",
+                ""state"": ""andhra"",
+                ""country"": ""ind"",
+                ""zipCode"": ""517002""
+        },
+        ""photos"": [{
+                ""id"": ""/filename"",
+                ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
+                ""ownerId"": ""owner102""
+        }],
+        ""size"": ""HATCHBACK"",
+        ""owner"": {
+                ""id"": ""owner102"",
+                ""firstName"": ""owner102"",
+                ""lastName"": ""string"",
+                ""userId"": ""owner102@testing.com""
+        },
+        ""description"": ""testing""
+}",201,ayyappa temple,,
+P0003,,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -120,8 +150,39 @@ P0001,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""HATCHBACK"",
 	""type"": ""PLATINUM""
-}",,,vijaya durga petrol station,,
-,,,,"{
+}","{
+  ""code"": ""spot103"",
+  ""type"": ""PLATINUM"",
+  ""geoLocation"": {
+    ""latitude"": 13.196868,
+    ""longitude"": 79.093518
+  },
+  ""address"": {
+    ""doorNo"": ""55"",
+    ""street"": ""durganagar"",
+    ""landmark"": ""vijay durga petrol pum"",
+    ""city"": ""chittoor"",
+    ""state"": ""andhra"",
+    ""country"": ""ind"",
+    ""zipCode"": ""517002""
+  },
+  ""photos"": [
+    {
+      ""id"": ""/filename"",
+      ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
+      ""ownerId"": ""owner103""
+    }
+  ],
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""id"": ""owner103"",
+    ""firstName"": ""owner103"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner103@testing.com""
+  },
+  ""description"": ""testing""
+}",201,vijaya durga petrol station,,
+P0004,,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -150,8 +211,39 @@ P0001,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""HATCHBACK"",
 	""type"": ""PLATINUM""
-}",,,Durga temple,,
-,,,,"{
+}","{
+  ""code"": ""spot104"",
+  ""type"": ""PLATINUM"",
+  ""geoLocation"": {
+    ""latitude"": 13.197317,
+    ""longitude"": 79.093845
+  },
+  ""address"": {
+    ""doorNo"": ""55"",
+    ""street"": ""durganagar"",
+    ""landmark"": ""Durga temple"",
+    ""city"": ""chittoor"",
+    ""state"": ""andhra"",
+    ""country"": ""ind"",
+    ""zipCode"": ""517002""
+  },
+  ""photos"": [
+    {
+      ""id"": ""/filename"",
+      ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipNhygtMc1wNzN4n6txZLzIhgJ-QZ044R4axyFZX=w90-h90-n-k-no"",
+      ""ownerId"": ""owner104""
+    }
+  ],
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""id"": ""owner104"",
+    ""firstName"": ""owner104"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner104@testing.com""
+  },
+  ""description"": ""testing""
+}",201,Durga temple,,
+P0005,,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -180,8 +272,39 @@ P0001,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""SEDAN"",
 	""type"": ""PLATINUM""
-}",,,vinayaka temple,,"13.1952499,79.0904714 - home location"
-,,,,"{
+}","{
+  ""code"": ""spot105"",
+  ""type"": ""PLATINUM"",
+  ""geoLocation"": {
+    ""latitude"": 13.195908,
+    ""longitude"": 79.088291
+  },
+  ""address"": {
+    ""doorNo"": ""55"",
+    ""street"": ""durganagar"",
+    ""landmark"": ""vinayaka temple"",
+    ""city"": ""chittoor"",
+    ""state"": ""andhra"",
+    ""country"": ""ind"",
+    ""zipCode"": ""517002""
+  },
+  ""photos"": [
+    {
+      ""id"": ""/filename"",
+      ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipPGoxAP7eK6C44vSIx4SdhXdp78qiZz2qKp8-o1=w90-h90-n-k-no"",
+      ""ownerId"": ""owner105""
+    }
+  ],
+  ""size"": ""SEDAN"",
+  ""owner"": {
+    ""id"": ""owner105"",
+    ""firstName"": ""owner105"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner105@testing.com""
+  },
+  ""description"": ""testing""
+}",201,vinayaka temple,,"13.1952499,79.0904714 - home location"
+P0006,,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -210,4 +333,35 @@ P0001,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""SEDAN"",
 	""type"": ""PLATINUM""
-}",,,,,
+}","{
+  ""code"": ""spot106"",
+  ""type"": ""PLATINUM"",
+  ""geoLocation"": {
+    ""latitude"": 13.193934,
+    ""longitude"": 79.08925
+  },
+  ""address"": {
+    ""doorNo"": ""55"",
+    ""street"": ""durganagar"",
+    ""landmark"": ""park colony"",
+    ""city"": ""chittoor"",
+    ""state"": ""andhra"",
+    ""country"": ""ind"",
+    ""zipCode"": ""517002""
+  },
+  ""photos"": [
+    {
+      ""id"": ""/filename"",
+      ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOfv3DSTkjsgvwCsUe_flDr4DBXneEVR1hWQCvR=w90-h90-n-k-no"",
+      ""ownerId"": ""owner106""
+    }
+  ],
+  ""size"": ""SEDAN"",
+  ""owner"": {
+    ""id"": ""owner105"",
+    ""firstName"": ""owner106"",
+    ""lastName"": ""string"",
+    ""userId"": ""owner106@testing.com""
+  },
+  ""description"": ""testing""
+}",201,,,
