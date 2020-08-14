@@ -23,6 +23,7 @@
 #pycharm
 .idea/*
 venv/*
+venv_pod_test_suite/*
 *.pyc
 # Package Files #
 *.jar
