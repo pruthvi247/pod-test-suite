@@ -94,4 +94,4 @@ def clean_booking_collection():
 
     mycollection.delete_many({})
 
-clean_booking_collection()
+#clean_booking_collection()
