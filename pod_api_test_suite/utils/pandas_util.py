@@ -11,5 +11,4 @@ def pandas_to_dict(pd_df):
 
     pd_dict = pd_df.to_dict(orient="index")   # orient=index parameter to have the index as dictionary keys.
 
-
     return pd_dict
