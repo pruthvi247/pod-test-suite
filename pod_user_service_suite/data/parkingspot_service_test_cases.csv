@@ -60,8 +60,8 @@ P0001,create parking spot,POST,/parkingspot,"{
     ""userId"": ""owner101@testing.com""
   },
   ""description"": ""testing""
-}",201,creating first parking spot,,
-P0002,,POST,/parkingspot,"{
+}",201,creating first parking spot
+P0002,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -120,8 +120,8 @@ P0002,,POST,/parkingspot,"{
                 ""userId"": ""owner102@testing.com""
         },
         ""description"": ""testing""
-}",201,ayyappa temple,,
-P0003,,POST,/parkingspot,"{
+}",201,ayyappa temple
+P0003,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -181,8 +181,8 @@ P0003,,POST,/parkingspot,"{
     ""userId"": ""owner103@testing.com""
   },
   ""description"": ""testing""
-}",201,vijaya durga petrol station,,
-P0004,,POST,/parkingspot,"{
+}",201,vijaya durga petrol station
+P0004,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -242,8 +242,8 @@ P0004,,POST,/parkingspot,"{
     ""userId"": ""owner104@testing.com""
   },
   ""description"": ""testing""
-}",201,Durga temple,,
-P0005,,POST,/parkingspot,"{
+}",201,Durga temple
+P0005,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -303,8 +303,8 @@ P0005,,POST,/parkingspot,"{
     ""userId"": ""owner105@testing.com""
   },
   ""description"": ""testing""
-}",201,vinayaka temple,,"13.1952499,79.0904714 - home location"
-P0006,,POST,/parkingspot,"{
+}",201,vinayaka temple
+P0006,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""ind"",
@@ -364,4 +364,4 @@ P0006,,POST,/parkingspot,"{
     ""userId"": ""owner106@testing.com""
   },
   ""description"": ""testing""
-}",201,,,
+}",201,some location
