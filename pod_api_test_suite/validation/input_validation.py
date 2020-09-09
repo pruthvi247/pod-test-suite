@@ -39,5 +39,7 @@ def _validate_input_column_list(input_col):
 
     # print(list(input_col))
     # print(len(list(input_col)))
-    assert len(list(input_col)) == len(ColumnHeaders), "Either columns are missing or there are empty columns in the " \
-                                                       "input csv "
+
+    assert len(list(input_col)) == len(ColumnHeaders)-1, f'Either columns are missing or there are empty columns in the ' \
+                                                       f'input csv  columnHeaders: {ColumnHeaders} , input column ' \
+                                                       f'list : {input_col} '

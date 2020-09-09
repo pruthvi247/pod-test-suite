@@ -7,14 +7,11 @@
 > python scripts/super_script.py --ip=localhost --port=8082 --service=parkingspot --basePath=/Users/pruthvikumar/Documents/workspace/pod-test-suite/
 >
 > python scripts/super_script.py --ip=localhost --port=8081 --service=booking --basePath=/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/
->
-> pytest pod_api_test_suite/drivers/api_service_driver.py -sv
->
-> python pod_api_test_suite/drivers/api_service_driver.py  --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough --port=8081
 
 
+> python3 pod_api_test_suite/test_invoker.py --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough/test_report.csv --port=8081 --input_file_path=/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/booking_service_test_cases.csv 
 
-
+> python3 pod_api_test_suite/test_invoker.py --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough/test_report.csv --port=8082 --input_file_path=/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/parkingspot_service_test_cases.csv
 
 python3 -m venv env
 source ./env/bin/activate

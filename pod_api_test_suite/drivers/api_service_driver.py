@@ -14,78 +14,44 @@ from pod_api_test_suite.properties.enum import ColumnHeaders
 import pod_api_test_suite.api_service.http_service as https
 from pod_api_test_suite.validation import output_validation
 from pod_api_test_suite.utils import report_util
-from pod_api_test_suite.utils.api_arg_parsing import CliArgParse
+from pod_api_test_suite.utils.input_param_util import read_input_json
 
-
-# input_df = csv.csv_reader_pandas("/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/booking_service_test_cases.csv")
-input_df = csv.csv_reader_pandas("/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/parkingspot_service_test_cases.csv")
-
-input_validation.validate_input_csv_format(input_df)
-
-
-# #  Converting pandas data frame to dict, so that we can convert dict to tuples.
-# #  Doing this because pytest parameterize will take iterables as parameters
-input_dict = pdutil.pandas_to_dict(input_df)
-
-# ## parameters
+"""
+TODO : should look at work around for passing arguments through command line
+#  ## Below arg parsing works, commented it because pytest is not able to read the args
+#  ## eg command : python pod_api_test_suite/drivers/api_service_driver.py \
+ --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough --port=8081
 
 # ip_args = CliArgParse().get_args()
 # URL_PREFIX = "http://"+str(ip_args.end_point_ip)+str(ip_args.port)
 # HEADERS = ip_args.headers
 # OUTPUT_REPORT_PATH = ip_args.output_report_path
 
+"""
 
-URL_PREFIX = "http://localhost:8082"
-HEADERS = {"Content-Type": "application/json"}
-OUTPUT_REPORT_PATH ="/Users/pruthvikumar/Desktop/rough/test_report.csv"
+## This is to read the input cli params that is written to json file
+input_param_dict = read_input_json(str(str(os.getcwd()) + "/pod_api_test_suite/properties/")+"ip_cli_params.json")
 
+input_df= csv.csv_reader_pandas(input_param_dict['INPUT_FILE_PATH'])
+
+URL_PREFIX = input_param_dict['URL_PREFIX']
+HEADERS = input_param_dict['HEADERS']
+OUTPUT_REPORT_PATH = input_param_dict['OUTPUT_REPORT_PATH']
+
+input_dict = pdutil.pandas_to_dict(input_df)
 final_report_dict = {}
 
-
+input_validation.validate_input_csv_format(input_df)
 
 @pytest.mark.parametrize("input_value", input_dict.items())
 def test_sample(input_value):
 
-    if(input_value[1]['METHOD']== str(RestMethods.POST.name)):
+    if input_value[1]['METHOD'] == str(RestMethods.POST.name):
         print(f'Executing test case : {input_value[0]}')
         ip_url = str(input_value[1][ColumnHeaders.URL.name])
         ip_payload = input_value[1]["API_INPUT"]
 
         http_output = https.invoke_post_call(ip=URL_PREFIX, url=ip_url,
-                                       headers=HEADERS, input_palyload=ip_payload)
-
-        # # compares expected json with http output
-        diff_dict = output_validation.json_validation(http_out_json=http_output.json(),
-                                    expected_output_json=json.loads(input_value[1]["EXPECTED_OUTPUT"]))
-
-        final_report_dict.update(report_util.prepare_output_dict(diff_dict, testID=input_value[0]))
-        print(final_report_dict)
-
-
-
-    elif(input_value[1]['METHOD']== str(RestMethods.GET.name)):
-        print(f'Executing test case : {input_value[0]}')
-        ip_url = str(input_value[1][ColumnHeaders.URL.name])
-
-        http_output = https.invoke_get_call(ip=URL_PREFIX, url=ip_url,
-                                             headers=HEADERS)
-
-        # # compares expected json with http output
-        diff_dict = output_validation.json_validation(http_out_json=http_output.json(),
-                                                      expected_output_json=json.loads(
-                                                          input_value[1]["EXPECTED_OUTPUT"]))
-
-        # if diff_dict:
-        #     print(f' ???????????????? {diff_dict}')
-
-        final_report_dict.update(report_util.prepare_output_dict(diff_dict, testID=input_value[0]))
-        print(final_report_dict)
-    elif (input_value[1]['METHOD'] == str(RestMethods.PUT.name)):
-        print(f'Executing test case : {input_value[0]}')
-        ip_url = str(input_value[1][ColumnHeaders.URL.name])
-        ip_payload = input_value[1]["API_INPUT"]
-
-        http_output = https.invoke_put_call(ip=URL_PREFIX, url=ip_url,
                                              headers=HEADERS, input_palyload=ip_payload)
 
         # # compares expected json with http output
@@ -95,19 +61,45 @@ def test_sample(input_value):
 
         final_report_dict.update(report_util.prepare_output_dict(diff_dict, testID=input_value[0]))
         print(final_report_dict)
-    elif (input_value[1]['METHOD'] == str(RestMethods.DELETE.name)):
-        assert False,f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
+
+    elif input_value[1]['METHOD'] == str(RestMethods.GET.name):
+        print(f'Executing test case : {input_value[0]}')
+        ip_url = str(input_value[1][ColumnHeaders.URL.name])
+
+        http_output = https.invoke_get_call(ip=URL_PREFIX, url=ip_url,
+                                            headers=HEADERS)
+
+        # # compares expected json with http output
+        diff_dict = output_validation.json_validation(http_out_json=http_output.json(),
+                                                      expected_output_json=json.loads(
+                                                          input_value[1]["EXPECTED_OUTPUT"]))
+
+        final_report_dict.update(report_util.prepare_output_dict(diff_dict, testID=input_value[0]))
+
+    elif input_value[1]['METHOD'] == str(RestMethods.PUT.name):
+        print(f'Executing test case : {input_value[0]}')
+        ip_url = str(input_value[1][ColumnHeaders.URL.name])
+        ip_payload = input_value[1]["API_INPUT"]
+
+        http_output = https.invoke_put_call(ip=URL_PREFIX, url=ip_url,
+                                            headers=HEADERS, input_palyload=ip_payload)
+
+        # # compares expected json with http output
+        diff_dict = output_validation.json_validation(http_out_json=http_output.json(),
+                                                      expected_output_json=json.loads(
+                                                          input_value[1]["EXPECTED_OUTPUT"]))
+
+        final_report_dict.update(report_util.prepare_output_dict(diff_dict, testID=input_value[0]))
+        print(final_report_dict)
+
+    elif input_value[1]['METHOD'] == str(RestMethods.DELETE.name):
+        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
     else:
 
-        assert False,f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
+        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
 
     # writing final_report to csv
     report_util.write_to_csv(OUTPUT_REPORT_PATH, final_report_dict)
     report_util.write_to_html(OUTPUT_REPORT_PATH)
-
-webbrowser.open('file://' + os.path.realpath(OUTPUT_REPORT_PATH.replace('.csv', '.html')))
-
-
-
 
 
