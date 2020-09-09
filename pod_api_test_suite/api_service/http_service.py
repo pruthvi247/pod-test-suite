@@ -17,7 +17,7 @@ def invoke_get_call(ip,url,headers):
     return http_output
 
 
-def invoke_put_call(ip,url,headers):
+def invoke_put_call(ip,url,input_palyload,headers):
     final_url = str(ip)+str(url)
-    http_output = requests.put(final_url, headers=headers)
+    http_output = requests.put(final_url,data=json.dumps(json.loads(input_palyload)), headers=headers)
     return http_output

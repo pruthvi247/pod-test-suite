@@ -23,6 +23,7 @@ def write_to_csv(filepath,dict):
 
 
 def write_to_html(filepath):
+    """This method reads csv using pandas and converts to html page"""
     df = pd.read_csv(filepath)
     newdict = {}
     for items in df.itertuples():

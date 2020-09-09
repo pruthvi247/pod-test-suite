@@ -8,7 +8,10 @@
 >
 > python scripts/super_script.py --ip=localhost --port=8081 --service=booking --basePath=/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/
 >
-> pytest pod_api_test_suite/drivers/parking_spot_service_driver.py -sv
+> pytest pod_api_test_suite/drivers/api_service_driver.py -sv
+>
+> python pod_api_test_suite/drivers/api_service_driver.py  --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough --port=8081
+
 
 
 
