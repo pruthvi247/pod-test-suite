@@ -13,6 +13,8 @@
 
 > python3 pod_api_test_suite/test_invoker.py --end_point_ip=192.168.0.177 --output_report_path=/Users/pruthvikumar/Desktop/rough/test_report.csv --port=8082 --input_file_path=/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/parkingspot_service_test_cases.csv
 
+> seed_data command :  python pod_api_test_suite/utils/seed_data_prep.py
+>
 python3 -m venv env
 source ./env/bin/activate
 python -m pip install -- user pipenv
