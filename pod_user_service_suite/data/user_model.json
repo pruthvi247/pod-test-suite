@@ -1,0 +1,26 @@
+{
+	"firstName": "pruthvi",
+	"lastName": "kumar",
+	"email": "pruthvi@pod.com",
+	"phoneNumber": "9676565636",
+	"dob": "24-07-1991",
+	"address": {
+		"doorNo": "61/62",
+		"street": "madina",
+		"landmark": "madina masjid",
+		"city": "bengaluru",
+		"state": "Karnataka",
+		"country": "IND",
+		"zipCode": "51602"
+	},
+	"vehicle": {
+		"name": "swift",
+		"manufacturer": "maruthi",
+		"model": "zdi",
+		"yearBought": "2014",
+		"colour": "white",
+		"regNo": "AP26 3386"
+	},
+
+	"userId": "9916893441"
+}
