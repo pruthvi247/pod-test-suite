@@ -15,6 +15,7 @@ import pod_api_test_suite.api_service.http_service as https
 from pod_api_test_suite.validation import output_validation
 from pod_api_test_suite.utils import report_util
 from pod_api_test_suite.utils.input_param_util import read_input_json
+from pod_api_test_suite.utils.input_json_util import prepare_dependent_input_json
 
 """
 TODO : should look at work around for passing arguments through command line
@@ -40,6 +41,7 @@ OUTPUT_REPORT_PATH = input_param_dict['OUTPUT_REPORT_PATH']
 
 input_dict = pdutil.pandas_to_dict(input_df)
 final_report_dict = {}
+response_dict={}
 
 input_validation.validate_input_csv_format(input_df)
 
@@ -49,10 +51,18 @@ def test_sample(input_value):
     if input_value[1]['METHOD'] == str(RestMethods.POST.name):
         print(f'Executing test case : {input_value[0]}')
         ip_url = str(input_value[1][ColumnHeaders.URL.name])
+
         ip_payload = input_value[1]["API_INPUT"]
+
+
+        if str(input_value[1]["DEPENDENT"]).lower() != "no":
+            print("<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>")
+            print(input_value[0])
+            ip_payload = prepare_dependent_input_json(dep_json=json.loads(input_value[1]["DEPENDENT"]),input_json=json.loads(input_value[1]["API_INPUT"]),parent_json=response_dict[str(json.loads(input_value[1]["DEPENDENT"])["dependent_test_case_id"])])
 
         http_output = https.invoke_post_call(ip=URL_PREFIX, url=ip_url,
                                              headers=HEADERS, input_palyload=ip_payload)
+        response_dict[str(input_value[0])] = http_output.json()
 
         # # compares expected json with http output
         diff_dict = output_validation.json_validation(http_out_json=http_output.json(),

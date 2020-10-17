@@ -9,9 +9,10 @@ class ColumnHeaders(enum.Enum):
         METHOD = 3
         URL = 4
         API_INPUT = 5
-        EXPECTED_OUTPUT = 6
-        EXPECTED_STATUS_CODE = 7
-        NOTES = 8
+        DEPENDENT =6
+        EXPECTED_OUTPUT = 7
+        EXPECTED_STATUS_CODE = 8
+        NOTES = 9
 
 class RestMethods(enum.Enum):
 

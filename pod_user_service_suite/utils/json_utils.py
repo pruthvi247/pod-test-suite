@@ -50,6 +50,9 @@ def compare_json(json1, json2,result=None):
     return result
 
 
+
+
+
 def make_dict(filepath) :
     with open(filepath,'r') as f:
         logging.debug("reading json properties file from ::{}".format('pod_user_service_suite/config/user_service_properties.json'))

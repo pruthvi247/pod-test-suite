@@ -8,6 +8,7 @@ def invoke_post_call(ip,url,input_palyload,headers):
     http_output = requests.post(final_url, data=json.dumps(json.loads(input_palyload)), headers=headers)
     # print(http_output.status_code)
     # print(http_output.json())
+
     return http_output
 
 

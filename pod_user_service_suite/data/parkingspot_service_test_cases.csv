@@ -1,4 +1,4 @@
-ID,TESTCASE,METHOD,URL,API_INPUT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
+ID,TESTCASE,METHOD,URL,API_INPUT,DEPENDENT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
 P0001,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
@@ -44,7 +44,7 @@ P0001,create parking spot,POST,/parkingspot,"{
 		""HOURLY""
 	],
 	""type"": ""PLATINUM""
-}","{
+}",NO,"{
 
   ""code"": ""spoot101"",
   ""type"": ""PLATINUM"",
@@ -134,7 +134,7 @@ P0002,create parking spot,POST,/parkingspot,"{
 		""HOURLY""
 	],
 	""type"": ""PLATINUM""
-}","{
+}",No,"{
   ""code"": ""spoot102"",
   ""type"": ""PLATINUM"",
   ""station"": {
@@ -181,63 +181,95 @@ P0002,create parking spot,POST,/parkingspot,"{
 P0003,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
-		""country"": ""ind"",
-		""doorNo"": ""55"",
-		""landmark"": ""vijay durga petrol pum"",
-		""state"": ""andhra"",
-		""street"": ""durganagar"",
+		""country"": ""IND"",
+		""doorNo"": ""Door-spoot102-A"",
+		""landmark"": ""Ayyappatemple"",
+		""state"": ""AP"",
+		""street"": ""Durganagar colony"",
 		""zipCode"": ""517002""
 	},
-	""code"": ""spot103"",
-	""description"": ""testing"",
+	""amenities"": [
+		""ROOF""
+	],
+	""attachmentIds"": [
+		""//path/to/parkingspot.jpg""
+	],
+	""code"": ""spoot102-A"",
+	""description"": ""This spot and station is for testing"",
 	""geoLocation"": {
-		""latitude"": 13.196868,
-		""longitude"": 79.093518
+		""latitude"": 13.196278,
+		""longitude"": 79.088239
 	},
 	""owner"": {
-		""firstName"": ""owner103"",
-		""id"": ""owner103"",
-		""lastName"": ""string"",
-		""userId"": ""owner103@testing.com""
+
+		""userId"": ""owneer102""
+
 	},
-	""photos"": [{
-		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
-		""id"": ""/filename"",
-		""ownerId"": ""owner103""
-	}],
+	""paymentModes"": [
+		""CASH""
+	],
+	""price"": {
+		""HRS_UPTO_2"": 50,
+		""HRS_2_TO_5"": 60
+	},
 	""size"": ""HATCHBACK"",
+	""station"": {
+		""attachmentIds"": [
+			""/path/to/station/photo.jpg""
+		],
+		""type"": ""GOVERNMENT""
+	},
+	""timeDurations"": [
+		""HOURLY""
+	],
 	""type"": ""PLATINUM""
 }","{
-  ""code"": ""spot103"",
+	""dependent_test_case_id"": ""P0001"",
+	""dependent_test_case_key"": [""station"", ""id""],
+	""current_test_case_key"": [""station"", ""id""]
+}","{
+  ""code"": ""spoot102-A"",
   ""type"": ""PLATINUM"",
+  ""station"": {
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station/photo.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF""
+  ],
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 50,
+    ""HRS_2_TO_5"": 60
+  },
   ""geoLocation"": {
-    ""latitude"": 13.196868,
-    ""longitude"": 79.093518
+    ""latitude"": 13.196278,
+    ""longitude"": 79.088239
   },
   ""address"": {
-    ""doorNo"": ""55"",
-    ""street"": ""durganagar"",
-    ""landmark"": ""vijay durga petrol pum"",
+    ""doorNo"": ""Door-spoot102-A"",
+    ""street"": ""Durganagar colony"",
+    ""landmark"": ""Ayyappatemple"",
     ""city"": ""chittoor"",
-    ""state"": ""andhra"",
-    ""country"": ""ind"",
+    ""state"": ""AP"",
+    ""country"": ""IND"",
     ""zipCode"": ""517002""
   },
-  ""photos"": [
-    {
-      ""id"": ""/filename"",
-      ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
-      ""ownerId"": ""owner103""
-    }
-  ],
   ""size"": ""HATCHBACK"",
   ""owner"": {
-    ""id"": ""owner103"",
-    ""firstName"": ""owner103"",
-    ""lastName"": ""string"",
-    ""userId"": ""owner103@testing.com""
+    ""userId"": ""owneer102""
   },
-  ""description"": ""testing""
+  ""description"": ""This spot and station is for testing"",
+  ""attachmentIds"": [
+    ""//path/to/parkingspot.jpg""
+  ]
 }",201,vijaya durga petrol station
 P0004,create parking spot,POST,/parkingspot,"{
 	""address"": {
@@ -268,7 +300,7 @@ P0004,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""HATCHBACK"",
 	""type"": ""PLATINUM""
-}","{
+}",NO,"{
   ""code"": ""spot104"",
   ""type"": ""PLATINUM"",
   ""geoLocation"": {
@@ -329,7 +361,7 @@ P0005,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""SEDAN"",
 	""type"": ""PLATINUM""
-}","{
+}",NO,"{
   ""code"": ""spot105"",
   ""type"": ""PLATINUM"",
   ""geoLocation"": {
@@ -390,7 +422,7 @@ P0006,create parking spot,POST,/parkingspot,"{
 	}],
 	""size"": ""SEDAN"",
 	""type"": ""PLATINUM""
-}","{
+}",NO,"{
   ""code"": ""spot106"",
   ""type"": ""PLATINUM"",
   ""geoLocation"": {
