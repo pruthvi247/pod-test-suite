@@ -117,8 +117,11 @@ if __name__ == "__main__":
     # input_file_path = '/home/avatar/Documents/pythonProjects/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
     # output_file_path = '/home/avatar/Documents/pythonProjects/pod-test-suite/pod_user_service_suite/data/data_prep.csv'
 
-    input_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
-    output_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
+    # input_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
+    # output_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
+    input_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
+    output_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
+     ### /home/avatar/Documents/pythonProjects/a1m/pod-test-suite // ubuntu path
 
 
     #### Below step is to create a json from the raw input geo file -eoPoints_users.cs
@@ -129,7 +132,8 @@ if __name__ == "__main__":
     #### Below steps are to create parking spots in DB using parking spot API
     # end_point = 'http://192.168.0.194:8080/parkingspot'
     # end_point = 'http://192.168.0.177:8082/parkingspot'
-    end_point = 'http://192.168.0.177:8080/parkingspot'
+    # end_point = 'http://192.168.0.177:8080/parkingspot'
+    end_point = 'http://172.20.10.6:8082/parkingspot'
     Headers = {"Content-Type": "application/json"}
 
     post_json(output_file_path, 'output', end_point, Headers)

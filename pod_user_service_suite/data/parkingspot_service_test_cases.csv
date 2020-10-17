@@ -1,125 +1,182 @@
 ID,TESTCASE,METHOD,URL,API_INPUT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
 P0001,create parking spot,POST,/parkingspot,"{
-  ""address"": {
-    ""city"": ""banglore"",
-    ""country"": ""ind"",
-    ""doorNo"": ""55"",
-    ""landmark"": ""mcd"",
-    ""state"": ""karnataka"",
-    ""street"": ""hsr"",
-    ""zipCode"": ""56006""
-  },
-  ""code"": ""spot101"",
-  ""description"": ""testing"",
-  ""geoLocation"": {
-    ""latitude"": 12.912639,
-    ""longitude"": 77.638010
-  },
-  ""owner"": {
-    ""firstName"": ""owner101"",
-    ""id"": ""owner101"",
-    ""lastName"": ""string"",
-    ""userId"": ""owner101@testing.com""
-  },
-  ""photos"": [
-    {
-      ""fileName"": ""/path"",
-      ""id"": ""/filename"",
-      ""ownerId"": ""owner101""
-    }
-  ],
-  ""size"": ""HATCHBACK"",
-  ""type"": ""PLATINUM""
-}","{  ""code"": ""spot101"",
+	""address"": {
+		""city"": ""chittoor"",
+		""country"": ""IND"",
+		""doorNo"": ""Door-spoot101"",
+		""landmark"": ""Ayyappatemple"",
+		""state"": ""AP"",
+		""street"": ""Durganagar colony"",
+		""zipCode"": ""517002""
+	},
+	""amenities"": [
+		""ROOF""
+	],
+	""attachmentIds"": [
+		""//path/to/parkingspot.jpg""
+	],
+	""code"": ""spoot101"",
+	""description"": ""This spot and station is for testing"",
+	""geoLocation"": {
+		""latitude"": 13.196278,
+		""longitude"": 79.088239
+	},
+	""owner"": {
+
+		""userId"": ""owneer101""
+
+	},
+	""paymentModes"": [
+		""CASH""
+	],
+	""price"": {
+		""HRS_UPTO_2"": 50,
+		""HRS_2_TO_5"": 60
+	},
+	""size"": ""HATCHBACK"",
+	""station"": {
+		""attachmentIds"": [
+			""/path/to/station/photo.jpg""
+		],
+		""type"": ""GOVERNMENT""
+	},
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""type"": ""PLATINUM""
+}","{
+
+  ""code"": ""spoot101"",
   ""type"": ""PLATINUM"",
+  ""station"": {
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station/photo.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF""
+  ],
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 50,
+    ""HRS_2_TO_5"": 60
+  },
   ""geoLocation"": {
-    ""latitude"": 12.912639,
-    ""longitude"": 77.63801
+    ""latitude"": 13.196278,
+    ""longitude"": 79.088239
   },
   ""address"": {
-    ""doorNo"": ""55"",
-    ""street"": ""hsr"",
-    ""landmark"": ""mcd"",
-    ""city"": ""banglore"",
-    ""state"": ""karnataka"",
-    ""country"": ""ind"",
-    ""zipCode"": ""56006""
+    ""doorNo"": ""Door-spoot101"",
+    ""street"": ""Durganagar colony"",
+    ""landmark"": ""Ayyappatemple"",
+    ""city"": ""chittoor"",
+    ""state"": ""AP"",
+    ""country"": ""IND"",
+    ""zipCode"": ""517002""
   },
-  ""photos"": [
-    {
-      ""id"": ""/filename"",
-      ""fileName"": ""/path"",
-      ""ownerId"": ""owner101""
-    }
-  ],
   ""size"": ""HATCHBACK"",
   ""owner"": {
-    ""id"": ""owner101"",
-    ""firstName"": ""owner101"",
-    ""lastName"": ""string"",
-    ""userId"": ""owner101@testing.com""
+    ""userId"": ""owneer101""
   },
-  ""description"": ""testing""
+  ""description"": ""This spot and station is for testing"",
+  ""attachmentIds"": [
+    ""//path/to/parkingspot.jpg""
+  ]
 }",201,creating first parking spot
 P0002,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
-		""country"": ""ind"",
-		""doorNo"": ""55"",
-		""landmark"": ""ayyapa temple"",
-		""state"": ""andhra"",
-		""street"": ""durganagar"",
+		""country"": ""IND"",
+		""doorNo"": ""Door-spoot102"",
+		""landmark"": ""Ayyappatemple2"",
+		""state"": ""AP"",
+		""street"": ""Durganagar colony"",
 		""zipCode"": ""517002""
 	},
-	""code"": ""spot102"",
-	""description"": ""testing"",
+	""amenities"": [
+		""ROOF""
+	],
+	""attachmentIds"": [
+		""https://homepages.cae.wisc.edu/~ece533/images/airplane.png""
+	],
+	""code"": ""spoot102"",
+	""description"": ""This spot and station is for testing"",
 	""geoLocation"": {
-		""latitude"": 13.196978,
-		""longitude"": 79.090692
+		""latitude"": 13.196278,
+		""longitude"": 79.088239
 	},
 	""owner"": {
-		""firstName"": ""owner102"",
-		""id"": ""owner102"",
-		""lastName"": ""string"",
-		""userId"": ""owner102@testing.com""
+
+		""userId"": ""owneer102""
+
 	},
-	""photos"": [{
-		""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
-		""id"": ""/filename"",
-		""ownerId"": ""owner102""
-	}],
+	""paymentModes"": [
+		""CASH""
+	],
+	""price"": {
+		""HRS_UPTO_2"": 50,
+		""HRS_2_TO_5"": 60
+	},
 	""size"": ""HATCHBACK"",
+	""station"": {
+		""attachmentIds"": [
+			""https://homepages.cae.wisc.edu/~ece533/images/airplane.png""
+		],
+		""type"": ""GOVERNMENT""
+	},
+	""timeDurations"": [
+		""HOURLY""
+	],
 	""type"": ""PLATINUM""
 }","{
-
-        ""code"": ""spot102"",
-        ""type"": ""PLATINUM"",
-        ""geoLocation"": {
-                ""latitude"": 13.196978,
-                ""longitude"": 79.090692
-        },
-        ""address"": {
-                ""doorNo"": ""55"",
-                ""street"": ""durganagar"",
-                ""landmark"": ""ayyapa temple"",
-                ""city"": ""chittoor"",
-                ""state"": ""andhra"",
-                ""country"": ""ind"",
-                ""zipCode"": ""517002""
-        },
-        ""photos"": [{
-                ""id"": ""/filename"",
-                ""fileName"": ""https://lh5.googleusercontent.com/p/AF1QipOMNvnrTlesBJwUcVVFBqVF-KnMVlJMi7_uU6lZ=w90-h90-n-k-no"",
-                ""ownerId"": ""owner102""
-        }],
-        ""size"": ""HATCHBACK"",
-        ""owner"": {
-                ""id"": ""owner102"",
-                ""firstName"": ""owner102"",
-                ""lastName"": ""string"",
-                ""userId"": ""owner102@testing.com""
-        },
-        ""description"": ""testing""
+  ""code"": ""spoot102"",
+  ""type"": ""PLATINUM"",
+  ""station"": {
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""https://homepages.cae.wisc.edu/~ece533/images/airplane.png""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF""
+  ],
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 50,
+    ""HRS_2_TO_5"": 60
+  },
+  ""geoLocation"": {
+    ""latitude"": 13.196278,
+    ""longitude"": 79.088239
+  },
+  ""address"": {
+    ""doorNo"": ""Door-spoot102"",
+    ""street"": ""Durganagar colony"",
+    ""landmark"": ""Ayyappatemple2"",
+    ""city"": ""chittoor"",
+    ""state"": ""AP"",
+    ""country"": ""IND"",
+    ""zipCode"": ""517002""
+  },
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""userId"": ""owneer102""
+  },
+  ""description"": ""This spot and station is for testing"",
+  ""attachmentIds"": [
+    ""https://homepages.cae.wisc.edu/~ece533/images/airplane.png""
+  ]
 }",201,ayyappa temple
 P0003,create parking spot,POST,/parkingspot,"{
 	""address"": {

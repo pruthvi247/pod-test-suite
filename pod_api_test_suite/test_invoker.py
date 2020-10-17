@@ -31,13 +31,14 @@ def write_params_to_json():
 
 write_params_to_json()
 
-cmd = "/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_api_test_suite/drivers/api_service_driver.py"
+# cmd = "/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_api_test_suite/drivers/api_service_driver.py"
+cmd = str(ip_args.driver_path)
 subprocess.call(["pytest",cmd, "-sv"])
 
 # ### this open test report in default browser
 webbrowser.open('file://' + os.path.realpath(OUTPUT_REPORT_PATH.replace('.csv', '.html')))
 
-mongodb_url = "mongodb://localhost:27017/"
+mongodb_url = "mongodb://172.20.10.7:27017/"
 db_name = 'test'
 collection = "parkingSpot"
 

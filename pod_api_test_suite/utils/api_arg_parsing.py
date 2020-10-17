@@ -12,6 +12,7 @@ class CliArgParse():
         parser.add_argument("--output_report_path",default=None)
         parser.add_argument("--input_file_path", default=None)
         parser.add_argument("--headers",default={"Content-Type": "application/json"})
+        parser.add_argument("--driver_path",default=None)
 
         args = parser.parse_args()
 

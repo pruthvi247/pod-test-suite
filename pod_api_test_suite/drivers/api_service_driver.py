@@ -93,10 +93,10 @@ def test_sample(input_value):
         print(final_report_dict)
 
     elif input_value[1]['METHOD'] == str(RestMethods.DELETE.name):
-        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
+        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite, please contact testing team, check {input_value[0]} test case"
     else:
 
-        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite, check {input_value[0]} test case"
+        assert False, f" {input_value[1]['METHOD']} : Method is not implemented in test suite,please contact testing team, check {input_value[0]} test case"
 
     # writing final_report to csv
     report_util.write_to_csv(OUTPUT_REPORT_PATH, final_report_dict)

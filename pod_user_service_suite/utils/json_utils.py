@@ -46,7 +46,7 @@ def compare_json(json1, json2,result=None):
                     else:
                         result[key] = [json1[key],json2[key]]
         else:
-            print("found new key in json1 %r" % key)
+            print("found new key in expected result json %r" % key)
     return result
 
 
