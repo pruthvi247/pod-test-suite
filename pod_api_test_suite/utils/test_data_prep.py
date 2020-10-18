@@ -59,13 +59,15 @@ for index in pd_df.index.values.tolist():
     new_row.append(pd_df["TESTCASE"][index])
     new_row.append(pd_df["METHOD"][index])
     new_row.append(pd_df["URL"][index])
-    if str(pd_df["DEPENDENT"][index]).lower() != "no":
-        new_row.append(prepare_api_input(json.loads(pd_df["API_INPUT"][index]),json.loads(pd_df["DEPENDENT"][index])))
+    if str(pd_df["API_INPUT_DEPENDENT"][index]).lower() != "no":
+        new_row.append(prepare_api_input(json.loads(pd_df["API_INPUT"][index]),json.loads(pd_df["API_INPUT_DEPENDENT"][index])))
     else:
         new_row.append(pd_df["API_INPUT"][index])
-
     new_row.append("No")
-    new_row.append(pd_df["EXPECTED_OUTPUT"][index])
+    if str(pd_df["EXPECTED_OUTPUT_DEPENDENT"][index]).lower() != "no":
+        new_row.append(prepare_api_input(json.loads(pd_df["EXPECTED_OUTPUT"][index]),json.loads(pd_df["EXPECTED_OUTPUT_DEPENDENT"][index])))
+    else:
+        new_row.append(pd_df["EXPECTED_OUTPUT"][index])
     new_row.append(pd_df["EXPECTED_STATUS_CODE"][index])
     new_row.append(pd_df["NOTES"][index])
     # out_df.append(new_row)
