@@ -3,7 +3,7 @@ P0001,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""IND"",
-		""doorNo"": ""Door-spoot101"",
+		""doorNo"": ""Door-spot101"",
 		""landmark"": ""Ayyappatemple"",
 		""state"": ""AP"",
 		""street"": ""Durganagar colony"",
@@ -15,7 +15,7 @@ P0001,create parking spot,POST,/parkingspot,"{
 	""attachmentIds"": [
 		""//path/to/parkingspot.jpg""
 	],
-	""code"": ""spoot101"",
+	""code"": ""spot101"",
 	""description"": ""This spot and station is for testing"",
 	""geoLocation"": {
 		""latitude"": 13.196278,
@@ -46,7 +46,7 @@ P0001,create parking spot,POST,/parkingspot,"{
 	""type"": ""PLATINUM""
 }",NO,"{
 
-  ""code"": ""spoot101"",
+  ""code"": ""spot101"",
   ""type"": ""PLATINUM"",
   ""station"": {
     ""type"": ""GOVERNMENT"",
@@ -72,7 +72,7 @@ P0001,create parking spot,POST,/parkingspot,"{
     ""longitude"": 79.088239
   },
   ""address"": {
-    ""doorNo"": ""Door-spoot101"",
+    ""doorNo"": ""Door-spot101"",
     ""street"": ""Durganagar colony"",
     ""landmark"": ""Ayyappatemple"",
     ""city"": ""chittoor"",
@@ -93,7 +93,7 @@ P0002,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""IND"",
-		""doorNo"": ""Door-spoot102"",
+		""doorNo"": ""Door-spot102"",
 		""landmark"": ""Ayyappatemple2"",
 		""state"": ""AP"",
 		""street"": ""Durganagar colony"",
@@ -105,7 +105,7 @@ P0002,create parking spot,POST,/parkingspot,"{
 	""attachmentIds"": [
 		""https://homepages.cae.wisc.edu/~ece533/images/airplane.png""
 	],
-	""code"": ""spoot102"",
+	""code"": ""spot102"",
 	""description"": ""This spot and station is for testing"",
 	""geoLocation"": {
 		""latitude"": 13.196278,
@@ -135,7 +135,7 @@ P0002,create parking spot,POST,/parkingspot,"{
 	],
 	""type"": ""PLATINUM""
 }",No,"{
-  ""code"": ""spoot102"",
+  ""code"": ""spot102"",
   ""type"": ""PLATINUM"",
   ""station"": {
     ""type"": ""GOVERNMENT"",
@@ -161,7 +161,7 @@ P0002,create parking spot,POST,/parkingspot,"{
     ""longitude"": 79.088239
   },
   ""address"": {
-    ""doorNo"": ""Door-spoot102"",
+    ""doorNo"": ""Door-spot102"",
     ""street"": ""Durganagar colony"",
     ""landmark"": ""Ayyappatemple2"",
     ""city"": ""chittoor"",
@@ -182,7 +182,7 @@ P0003,create parking spot,POST,/parkingspot,"{
 	""address"": {
 		""city"": ""chittoor"",
 		""country"": ""IND"",
-		""doorNo"": ""Door-spoot102-A"",
+		""doorNo"": ""Door-spot102-A"",
 		""landmark"": ""Ayyappatemple"",
 		""state"": ""AP"",
 		""street"": ""Durganagar colony"",
@@ -194,7 +194,7 @@ P0003,create parking spot,POST,/parkingspot,"{
 	""attachmentIds"": [
 		""//path/to/parkingspot.jpg""
 	],
-	""code"": ""spoot102-A"",
+	""code"": ""spot102-A"",
 	""description"": ""This spot and station is for testing"",
 	""geoLocation"": {
 		""latitude"": 13.196278,
@@ -228,7 +228,7 @@ P0003,create parking spot,POST,/parkingspot,"{
 	""dependent_test_case_key"": [""station"", ""id""],
 	""current_test_case_key"": [""station"", ""id""]
 }","{
-  ""code"": ""spoot102-A"",
+  ""code"": ""spot102-A"",
   ""type"": ""PLATINUM"",
   ""station"": {
     ""type"": ""GOVERNMENT"",
@@ -254,7 +254,7 @@ P0003,create parking spot,POST,/parkingspot,"{
     ""longitude"": 79.088239
   },
   ""address"": {
-    ""doorNo"": ""Door-spoot102-A"",
+    ""doorNo"": ""Door-spot102-A"",
     ""street"": ""Durganagar colony"",
     ""landmark"": ""Ayyappatemple"",
     ""city"": ""chittoor"",

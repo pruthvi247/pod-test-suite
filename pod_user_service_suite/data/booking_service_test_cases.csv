@@ -1,4 +1,4 @@
-ID,TESTCASE,METHOD,URL,API_INPUT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
+ID,TESTCASE,METHOD,URL,API_INPUT,DEPENDENT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
 B0001,post booking,POST,/booking,"{
 ""code"": ""book123"",
 ""customer"": {
@@ -9,9 +9,9 @@ B0001,post booking,POST,/booking,"{
   ""userId"": ""owner101""
 },
 ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-""parkingSpotId"": ""spot101"",
+""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
 ""parkingStartDate"": ""2019-11-13T09:21:25.619Z""
-}","{  ""code"": ""book123"",
+}",NO,"{  ""code"": ""book123"",
   ""owner"": {
     ""userId"": ""owner101""
   },
@@ -21,7 +21,7 @@ B0001,post booking,POST,/booking,"{
   ""dateOfBooking"": ""2019-11-14T09:22:25.619Z"",
   ""parkingStartDate"": ""2019-11-13T09:21:25.619Z"",
   ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-  ""parkingSpotId"": ""spot101"",
+  ""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
   ""status"": ""BOOKED""
 }",201,create spot booking
 B0002,post booking,POST,/booking,"{
@@ -34,9 +34,9 @@ B0002,post booking,POST,/booking,"{
   ""userId"": ""owner101""
 },
 ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-""parkingSpotId"": ""spot101"",
+""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
 ""parkingStartDate"": ""2019-11-13T09:21:25.619Z""
-}","{
+}",NO,"{
   ""code"": ""DUPLICATE"",
   ""message"": ""There is already a booking available for the given booking period""
 }",400,Should throw error saying booking is done for the given details as we have booked it in Boo01 test case
@@ -50,13 +50,13 @@ B0003,post booking,POST,/booking,"{
   ""userId"": ""owner101""
 },
 ""parkingEndDate"": ""2019-11-14T09:23:25.620Z"",
-""parkingSpotId"": ""spot101"",
+""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
 ""parkingStartDate"": ""2019-11-14T09:21:25.619Z""
-}","{
+}",NO,"{
   ""code"": ""INVALID_INPUT"",
   ""message"": ""The difference between the start and end time should be greater than the mandatory interval""
 }",400,this test case shoud not allow booking to be created because difference between the start and end time is not greater than madatory interval
-B0004,get booking by customer id,GET,/booking?customerId=cust101,,"{
+B0004,get booking by customer id,GET,/booking?customerId=cust101,,NO,"{
   ""items"": [
     {      ""code"": ""book123"",
       ""owner"": {
@@ -68,13 +68,13 @@ B0004,get booking by customer id,GET,/booking?customerId=cust101,,"{
       ""dateOfBooking"": ""2019-11-14T09:22:25.619Z"",
       ""parkingStartDate"": ""2019-11-13T09:21:25.619Z"",
       ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-      ""parkingSpotId"": ""spot102"",
+      ""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
       ""status"": ""BOOKED""
     }
   ],
   ""totalSize"": 1
 }",200,should get the booking we created in B0001
-B0005,get booking by parking spot id,GET,/booking/_byParkingSpot?parkingSpotId=spot101,,"{
+B0005,get booking by parking spot id,GET,/booking/_byParkingSpot?parkingSpotId=ae755f60-c591-48d7-8723-32bc057e490e,,No,"{
   ""items"": [
     {      ""code"": ""book123"",
       ""owner"": {
@@ -86,7 +86,7 @@ B0005,get booking by parking spot id,GET,/booking/_byParkingSpot?parkingSpotId=s
       ""dateOfBooking"": ""2019-11-14T09:22:25.619Z"",
       ""parkingStartDate"": ""2019-11-13T09:21:25.619Z"",
       ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-      ""parkingSpotId"": ""spot101"",
+      ""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
       ""status"": ""BOOKED""
     }
   ],
