@@ -17,6 +17,10 @@
 
 // Running Seed script
 >  python pod_api_test_suite/utils/seed_data_prep.py
+
+// Running Test data prep
+>python3 pod_api_test_suite/utils/test_data_prep.py
+
 python3 -m venv env
 source ./env/bin/activate
 python -m pip install -- user pipenv

@@ -9,9 +9,13 @@ B0001,post booking,POST,/booking,"{
   ""userId"": ""owner101""
 },
 ""parkingEndDate"": ""2019-11-14T09:23:25.62Z"",
-""parkingSpotId"": ""ae755f60-c591-48d7-8723-32bc057e490e"",
 ""parkingStartDate"": ""2019-11-13T09:21:25.619Z""
-}",NO,"{  ""code"": ""book123"",
+}","{
+	""dependent_test_case_id"": ""P0001"",
+	""dependent_test_case_key"": [""id""],
+	""current_test_case_key"": [""parkingSpotId""],
+""dependent_test_case_outPutPath"":""/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/test_report_http_resp.csv""
+}","{  ""code"": ""book123"",
   ""owner"": {
     ""userId"": ""owner101""
   },

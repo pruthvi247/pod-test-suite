@@ -41,7 +41,7 @@ OUTPUT_REPORT_PATH = input_param_dict['OUTPUT_REPORT_PATH']
 
 input_dict = pdutil.pandas_to_dict(input_df)
 final_report_dict = {}
-response_dict={}
+response_dict={}   # #### This dict is to store http response of all the test cases
 
 input_validation.validate_input_csv_format(input_df)
 
@@ -62,7 +62,7 @@ def test_sample(input_value):
 
         http_output = https.invoke_post_call(ip=URL_PREFIX, url=ip_url,
                                              headers=HEADERS, input_palyload=ip_payload)
-        response_dict[str(input_value[0])] = http_output.json()
+        response_dict[str(input_value[0])] = json.dumps(http_output.json())
 
         # # compares expected json with http output
         diff_dict = output_validation.json_validation(http_out_json=http_output.json(),
@@ -111,5 +111,9 @@ def test_sample(input_value):
     # writing final_report to csv
     report_util.write_to_csv(OUTPUT_REPORT_PATH, final_report_dict)
     report_util.write_to_html(OUTPUT_REPORT_PATH)
+    # ### writing http output of all test cases to csv, extracting output path form --output_report_path input parameter, appending "_http_resp.csv" to the file path
+    http_out_path = OUTPUT_REPORT_PATH.replace('.csv', '_http_resp.csv')
+    report_util.write_to_csv(http_out_path, response_dict)
+
 
 
