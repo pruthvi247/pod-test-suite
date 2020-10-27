@@ -3,6 +3,8 @@ import json
 import requests
 import math
 
+#### This module is to create test data, this does not validate the http output,
+# It just creates json from sample csv data and invokes post call to create spots
 
 def read_csv(input_file):
     # ## float precision is needed because
@@ -105,7 +107,9 @@ def prepare_parkingSpot_data(input):
         semifinal_dict.update(prep_aip_input(temp_dict=semifinal_dict, val=row['STATION'], key=['address','landmark']))
         semifinal_dict.update(prep_aip_input(temp_dict=semifinal_dict, val=code, key=['address','doorNo']))
         semifinal_dict.update(prep_aip_input(temp_dict=semifinal_dict, val='RESIDENCE', key=station_key))
-
+        semifinal_dict.update(prep_aip_input(temp_dict=semifinal_dict, val=json.loads(row['AMENITIES']), key="amenities"))
+        print("TRACE >>>>>>>>>>>>>>>>>>>>>.")
+        print(type(json.loads(row['AMENITIES'])))
         semifinal_dict.update(prep_aip_input(temp_dict=semifinal_dict, val=[{"fileName": "/root/file/photo.png","id":code,"ownerId":'owner'+code}], key='photos'))
 
         final_dict[code] = json.dumps(semifinal_dict)
@@ -126,14 +130,14 @@ if __name__ == "__main__":
 
     #### Below step is to create a json from the raw input geo file -eoPoints_users.cs
     #### we should un comment it when we want to create a different json structure
-    # output_dict = prepare_parkingSpot_data(input_file_path)
-    # write_to_csv(output_file_path, output_dict)
+    output_dict = prepare_parkingSpot_data(input_file_path)
+    write_to_csv(output_file_path, output_dict)
 
     #### Below steps are to create parking spots in DB using parking spot API
     # end_point = 'http://192.168.0.194:8080/parkingspot'
     # end_point = 'http://192.168.0.177:8082/parkingspot'
     # end_point = 'http://192.168.0.177:8080/parkingspot'
-    end_point = 'http://172.20.10.6:8082/parkingspot'
+    end_point = 'http://172.20.10.7:8082/parkingspot?newId=true'
     Headers = {"Content-Type": "application/json"}
 
     post_json(output_file_path, 'output', end_point, Headers)

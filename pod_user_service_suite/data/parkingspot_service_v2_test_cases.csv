@@ -1,0 +1,1900 @@
+ID,TESTCASE,METHOD,URL,API_INPUT,DEPENDENT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
+P0001,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1001.jpg""
+  ],
+  ""id"": ""station_1001"",
+  ""type"": ""GOVERNMENT""
+}",No,"{
+  ""id"": ""station_1001"",
+  ""type"": ""GOVERNMENT"",
+  ""attachmentIds"": [
+    ""/path/to/station1001.jpg""
+  ]
+}
+",201,Government parking station
+P0002,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1002.jpg""
+  ],
+  ""id"": ""station_1002"",
+  ""type"": ""MALL""
+}",No,"{
+  ""id"": ""station_1002"",
+  ""type"": ""MALL"",
+  ""attachmentIds"": [
+    ""/path/to/station1002.jpg""
+  ]
+}
+",201,Mall parking station
+P0003,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1003.jpg""
+  ],
+  ""id"": ""station_1003"",
+  ""type"": ""RESIDENCE""
+}",No,"{
+  ""id"": ""station_1003"",
+  ""type"": ""RESIDENCE"",
+  ""attachmentIds"": [
+    ""/path/to/station1003.jpg""
+  ]
+}
+",201,Residence station
+P0004,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1004.jpg""
+  ],
+  ""id"": ""station_1004"",
+  ""type"": ""PRIVATE""
+}",No,"{
+  ""id"": ""station_1004"",
+  ""type"": ""PRIVATE"",
+  ""attachmentIds"": [
+    ""/path/to/station1004.jpg""
+  ]
+}
+",201,Private parking station
+P0005,create parking spot,POST,/parkingspot?newId=false,"{
+  ""id"":""spot_1001"",
+	""geoLocation"": {
+		""longitude"": 77.638089,
+		""latitude"": 12.912849
+	},
+	""code"": ""spot_1001"",
+	""description"": ""This spot is created for testing purpose"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""14th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BDA Complex HSR"",
+		""doorNo"": ""0006""
+	},
+	""station"": {
+	  ""id"":""station_1001"",
+		""type"": ""GOVERNMENT""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1001"",
+		""ownerId"": ""owner_1001""
+	}]
+}",NO,"{
+  ""id"": ""spot_1001"",
+  ""code"": ""spot_1001"",
+  ""station"": {
+    ""id"": ""station_1001"",
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station1001.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912849,
+    ""longitude"": 77.638089
+  },
+  ""address"": {
+    ""doorNo"": ""0006"",
+    ""street"": ""14th Main Rd"",
+    ""landmark"": ""BDA Complex HSR"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing purpose""
+}",201,creating first parking spot under station- station_1001
+P0006,create parking spot,POST,/parkingspot?newId=false,"{
+  ""id"":""spot_1002"",
+	""geoLocation"": {
+		""longitude"": 77.638089,
+		""latitude"": 12.912849
+	},
+	""code"": ""spot_1002"",
+	""description"": ""This spot is created for testing purpose"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""14th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BDA Complex HSR"",
+		""doorNo"": ""0006""
+	},
+	""station"": {
+	  ""id"":""station_1001"",
+		""type"": ""GOVERNMENT""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1002"",
+		""ownerId"": ""owner_1001""
+	}]
+}",NO,"{
+  ""id"": ""spot_1002"",
+  ""code"": ""spot_1002"",
+  ""station"": {
+    ""id"": ""station_1001"",
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station1001.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912849,
+    ""longitude"": 77.638089
+  },
+  ""address"": {
+    ""doorNo"": ""0006"",
+    ""street"": ""14th Main Rd"",
+    ""landmark"": ""BDA Complex HSR"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing purpose""
+}",201,creating first parking spot under station- station_1001
+P0007,create parking spot,POST,/parkingspot?newId=false,"{
+  ""id"":""spot_1003"",
+	""geoLocation"": {
+		""longitude"": 77.638089,
+		""latitude"": 12.912849
+	},
+	""code"": ""spot_1003"",
+	""description"": ""This spot is created for testing purpose"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""14th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BDA Complex HSR"",
+		""doorNo"": ""0006""
+	},
+	""station"": {
+	  ""id"":""station_1001"",
+		""type"": ""GOVERNMENT""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1003"",
+		""ownerId"": ""owner_1001""
+	}]
+}",NO,"{
+  ""id"": ""spot_1003"",
+  ""code"": ""spot_1003"",
+  ""station"": {
+    ""id"": ""station_1001"",
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station1001.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912849,
+    ""longitude"": 77.638089
+  },
+  ""address"": {
+    ""doorNo"": ""0006"",
+    ""street"": ""14th Main Rd"",
+    ""landmark"": ""BDA Complex HSR"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing purpose""
+}",201,creating first parking spot under station- station_1001
+P0008,create parking spot,POST,/parkingspot?newId=false,"{
+  ""id"":""spot_1004"",
+	""geoLocation"": {
+		""longitude"": 77.638089,
+		""latitude"": 12.912849
+	},
+	""code"": ""spot_1004"",
+	""description"": ""This spot is created for testing purpose"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""14th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BDA Complex HSR"",
+		""doorNo"": ""0006""
+	},
+	""station"": {
+	  ""id"":""station_1001"",
+		""type"": ""GOVERNMENT""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1004"",
+		""ownerId"": ""owner_1001""
+	}]
+}",NO,"{
+  ""id"": ""spot_1004"",
+  ""code"": ""spot_1004"",
+  ""station"": {
+    ""id"": ""station_1001"",
+    ""type"": ""GOVERNMENT"",
+    ""attachmentIds"": [
+      ""/path/to/station1001.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912849,
+    ""longitude"": 77.638089
+  },
+  ""address"": {
+    ""doorNo"": ""0006"",
+    ""street"": ""14th Main Rd"",
+    ""landmark"": ""BDA Complex HSR"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing purpose""
+}",201,creating first parking spot under station- station_1001
+P0009,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1005"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1005"",
+	""description"": ""This spot is created for testing"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1005"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1005"",
+  ""code"": ""spot_1005"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing""
+}",201,"In this test case we are creating parking spot under “station_1003” and we are not passing station type in the input json, but station type will be present in the output"
+P0010,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1006"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1006"",
+	""description"": ""This spot is created for testing with all the amenities present"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	  ""amenities"": [
+    ""ROOF"",""SECURITY"",""SUPPORT_FOR_WHEELCHAIR"",""FLEXIBLE_ACCESS_HOURS"",""EV_CHARGING""
+  ],
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1005"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1006"",
+  ""code"": ""spot_1006"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities present""
+}",201,"This spot is created under “station_1003”, with all the amenities present- A station can have spots with different amenities"
+P0011,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1007"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1007"",
+	""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""size"": ""HATCHBACK"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""CASH"", ""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1005"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1007"",
+  ""code"": ""spot_1007"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""CASH"",
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size""
+}",201,"This spot is created with all the possible fields to create a spot,time duration is hourly"
+P0012,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1008"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1008"",
+	""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""size"": ""SEDAN"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""CASH"", ""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1005"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1008"",
+  ""code"": ""spot_1008"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""CASH"",
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SEDAN"",
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size""
+}",201,this spot is same as above with one variation – size is sedan”
+P0013,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1009"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1009"",
+	""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""HOURLY"",""MONTHLY""
+	],
+	""size"": ""SUV"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1008"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1009"",
+  ""code"": ""spot_1009"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY"",
+    ""MONTHLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size""
+}",201,"This is same as above, added monthly and hourly, remove cash from payment mode"
+P0014,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1005.jpg""
+  ],
+  ""id"": ""station_1005"",
+  ""type"": ""RESTAURANT""
+}",No,"{
+  ""id"": ""station_1005"",
+  ""type"": ""RESTAURANT"",
+  ""attachmentIds"": [
+    ""/path/to/station1005.jpg""
+  ]
+}
+",201,Restaurant parking station
+P0015,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1009"",
+	""geoLocation"": {
+		""longitude"": 77.637953,
+		""latitude"": 12.912249
+	},
+	""code"": ""spot_1009"",
+	""description"": ""This spot is created for testing STATION type is restaurant and owner is 1002"",
+	""owner"": {
+		""id"": ""owner_1002"",
+		""firstName"": ""owner_1002_first"",
+		""lastName"": ""owner_1002_last"",
+		""userId"": ""owner_1002@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""No 1"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""McDonald's hsr"",
+		""doorNo"": ""0011""
+	},
+	""station"": {
+		""type"": ""RESTAURANT"",
+		""id"": ""station_1005""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""owner_1002"",
+		""ownerId"": ""owner_1002""
+	}]
+}",NO,"{
+  ""id"": ""spot_1009"",
+  ""code"": ""spot_1009"",
+  ""station"": {
+    ""id"": ""station_1005"",
+    ""type"": ""RESTAURANT"",
+    ""attachmentIds"": [
+      ""/path/to/station1005.jpg""
+    ]
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912249,
+    ""longitude"": 77.637953
+  },
+  ""address"": {
+    ""doorNo"": ""0011"",
+    ""street"": ""No 1"",
+    ""landmark"": ""McDonald's hsr"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner_1002"",
+    ""firstName"": ""owner_1002_first"",
+    ""lastName"": ""owner_1002_last"",
+    ""userId"": ""owner_1002@pod.com""
+  },
+  ""description"": ""This spot is created for testing STATION type is restaurant and owner is 1002""
+}",201,creating first parking spot under station- station_1005
+P0016,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1010"",
+	""geoLocation"": {
+		""longitude"": 77.637953,
+		""latitude"": 12.912249
+	},
+	""code"": ""spot_1010"",
+	""description"": ""This spot is created for testing STATION type is restaurant and owner is 1002"",
+	""owner"": {
+		""id"": ""owner_1002"",
+		""firstName"": ""owner_1002_first"",
+		""lastName"": ""owner_1002_last"",
+		""userId"": ""owner_1002@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""No 1"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""McDonald's hsr"",
+		""doorNo"": ""0011""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""size"": ""HATCHBACK"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""CASH"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1005""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""owner_1002"",
+		""ownerId"": ""owner_1002""
+	}]
+}",No,"{
+  ""id"": ""spot_1010"",
+  ""code"": ""spot_1010"",
+  ""station"": {
+    ""id"": ""station_1005"",
+    ""type"": ""RESTAURANT"",
+    ""attachmentIds"": [
+      ""/path/to/station1005.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""CASH"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912249,
+    ""longitude"": 77.637953
+  },
+  ""address"": {
+    ""doorNo"": ""0011"",
+    ""street"": ""No 1"",
+    ""landmark"": ""McDonald's hsr"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""HATCHBACK"",
+  ""owner"": {
+    ""id"": ""owner_1002"",
+    ""firstName"": ""owner_1002_first"",
+    ""lastName"": ""owner_1002_last"",
+    ""userId"": ""owner_1002@pod.com""
+  },
+  ""description"": ""This spot is created for testing STATION type is restaurant and owner is 1002""
+}",201,"This spot is created with statation type as restaurant under station “station_1005”, “owner_1002” as owner"
+P0017,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1006.jpg""
+  ],
+  ""id"": ""station_1006"",
+  ""type"": ""RESTAURANT""
+}",No,"{
+  ""id"": ""station_1006"",
+  ""type"": ""RESTAURANT"",
+  ""attachmentIds"": [
+    ""/path/to/station1006.jpg""
+  ]
+}",201,
+P0018,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1011"",
+	""geoLocation"": {
+		""longitude"": 77.638591,
+		""latitude"": 12.912532
+	},
+	""code"": ""spot_1011"",
+	""description"": ""This spot is creted for testing under station-station_1006"",
+	""owner"": {
+		""id"": ""owner_1003"",
+		""firstName"": ""owner_1003_first"",
+		""lastName"": ""owner_1003_last"",
+		""userId"": ""owner_1003@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""89"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Cream Stone hsr"",
+		""doorNo"": ""0012""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""HOURLY"", ""MONTHLY""
+	],
+	""size"": ""SUV"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1006""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0012"",
+		""ownerId"": ""owner_1003""
+	}]
+}",No,"{
+  ""id"": ""spot_1011"",
+  ""code"": ""spot_1011"",
+  ""station"": {
+    ""id"": ""station_1006"",
+    ""type"": ""RESTAURANT"",
+    ""attachmentIds"": [
+      ""/path/to/station1006.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY"",
+    ""MONTHLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912532,
+    ""longitude"": 77.638591
+  },
+  ""address"": {
+    ""doorNo"": ""0012"",
+    ""street"": ""89"",
+    ""landmark"": ""Cream Stone hsr"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner_1003"",
+    ""firstName"": ""owner_1003_first"",
+    ""lastName"": ""owner_1003_last"",
+    ""userId"": ""owner_1003@pod.com""
+  },
+  ""description"": ""This spot is creted for testing under station-station_1006""
+}",201,New spot in new station under new owner
+P0019,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1012"",
+	""geoLocation"": {
+		""longitude"": 77.638591,
+		""latitude"": 12.912532
+	},
+	""code"": ""spot_1012"",
+	""description"": ""This spot is creted for testing under station-station_1006"",
+	""owner"": {
+		""id"": ""owner_1003"",
+		""firstName"": ""owner_1003_first"",
+		""lastName"": ""owner_1003_last"",
+		""userId"": ""owner_1003@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""89"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Cream Stone hsr"",
+		""doorNo"": ""0012""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY""
+	],
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""size"": ""SUV"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1006""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0012"",
+		""ownerId"": ""owner_1003""
+	}]
+}",No,"{
+  ""id"": ""spot_1012"",
+  ""code"": ""spot_1012"",
+  ""station"": {
+    ""id"": ""station_1006"",
+    ""type"": ""RESTAURANT"",
+    ""attachmentIds"": [
+      ""/path/to/station1006.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY""
+  ],
+  ""paymentModes"": [
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.912532,
+    ""longitude"": 77.638591
+  },
+  ""address"": {
+    ""doorNo"": ""0012"",
+    ""street"": ""89"",
+    ""landmark"": ""Cream Stone hsr"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner_1003"",
+    ""firstName"": ""owner_1003_first"",
+    ""lastName"": ""owner_1003_last"",
+    ""userId"": ""owner_1003@pod.com""
+  },
+  ""description"": ""This spot is creted for testing under station-station_1006""
+}",201,
+P0020,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1013"",
+	""geoLocation"": {
+		""longitude"": 77.632799,
+		""latitude"": 12.907471
+	},
+	""code"": ""spot_1013"",
+	""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size"",
+	""owner"": {
+		""id"": ""owner_1001"",
+		""firstName"": ""owner_1001_first"",
+		""lastName"": ""owner_1001_last"",
+		""userId"": ""owner_1001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""5th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Salarpuria Serenity Apartment"",
+		""doorNo"": ""0036""
+	},
+	""amenities"": [
+		""ROOF"", ""SECURITY"", ""SUPPORT_FOR_WHEELCHAIR"", ""FLEXIBLE_ACCESS_HOURS"", ""EV_CHARGING""
+	],
+	""timeDurations"": [
+		""MONTHLY""
+	],
+	""size"": ""SUV"",
+
+	""paymentModes"": [
+		""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1003""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""PHOTO_1008"",
+		""ownerId"": ""owner_1001""
+	}]
+}",No,"{
+  ""id"": ""spot_1013"",
+  ""code"": ""spot_1013"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""MONTHLY""
+  ],
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size""
+}",201,"This is same as above, added monthly and hourly, remove cash from payment mode"
+P0021,Create parking station,POST,/parkingstation?newId=false,"{
+  ""attachmentIds"": [
+    ""/path/to/station1007.jpg""
+  ],
+  ""id"": ""station_1007"",
+  ""type"": ""RESTAURANT""
+}",No,"{
+  ""id"": ""station_1007"",
+  ""type"": ""RESTAURANT"",
+  ""attachmentIds"": [
+    ""/path/to/station1007.jpg""
+  ]
+}",201,The Punjabi Rasoi hsr station
+P0022,create parking spot,POST,/parkingspot?newId=false,"{
+	""id"": ""spot_1014"",
+	""geoLocation"": {
+		""longitude"": 77.638581,
+		""latitude"": 12.911972
+	},
+	""code"": ""spot_1014"",
+	""description"": ""This spot is created for testing under punjabi rasoi hsr station"",
+	""owner"": {
+		""id"": ""owner_1007"",
+		""firstName"": ""owner_1007_first"",
+		""lastName"": ""owner_1007_last"",
+		""userId"": ""owner_1007@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""1082"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""The Punjabi Rasoi hsr"",
+		""doorNo"": ""0015""
+	},
+	""amenities"": [
+		""SECURITY""
+	],
+	""timeDurations"": [
+		""HOURLY""
+	],
+	""size"": ""SEDAN"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+
+	""paymentModes"": [
+		""CASH"", ""UPI"", ""CARD""
+	],
+	""station"": {
+		""id"": ""station_1007""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0015"",
+		""ownerId"": ""owner_1007""
+	}]
+}",No,"{
+  ""id"": ""spot_1014"",
+  ""code"": ""spot_1014"",
+  ""station"": {
+    ""id"": ""station_1007"",
+    ""type"": ""RESTAURANT"",
+    ""attachmentIds"": [
+      ""/path/to/station1007.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""SECURITY""
+  ],
+  ""paymentModes"": [
+    ""CASH"",
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.911972,
+    ""longitude"": 77.638581
+  },
+  ""address"": {
+    ""doorNo"": ""0015"",
+    ""street"": ""1082"",
+    ""landmark"": ""The Punjabi Rasoi hsr"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SEDAN"",
+  ""owner"": {
+    ""id"": ""owner_1007"",
+    ""firstName"": ""owner_1007_first"",
+    ""lastName"": ""owner_1007_last"",
+    ""userId"": ""owner_1007@pod.com""
+  },
+  ""description"": ""This spot is created for testing under punjabi rasoi hsr station""
+}",,
+P0023,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.631891,
+		""latitude"": 12.907566
+	},
+	""code"": ""spot0015"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0001"",
+		""firstName"": ""owner0001_first"",
+		""lastName"": ""owner0001_last"",
+		""userId"": ""owner0001@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""2nd Cross Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Madina masjid"",
+		""doorNo"": ""0001""
+	},
+	""amenities"": [
+		""ROOF"",
+		""SECURITY"",
+		""SUPPORT_FOR_WHEELCHAIR"",
+		""FLEXIBLE_ACCESS_HOURS"",
+		""EV_CHARGING""
+	],
+	""paymentModes"": [
+		""UPI"",
+		""CARD""
+	],
+	""timeDurations"": [
+		""MONTHLY"", ""HOURLY""
+	],
+	""size"": ""SUV"",
+	""price"": {
+		""HRS_UPTO_2"": 30,
+		""HRS_2_TO_5"": 40,
+		""HRS_5_TO_10"": 50,
+		""HRS_UPTO_24"": 100
+	},
+	""station"": {
+		""type"": ""RESIDENCE""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0001"",
+		""ownerId"": ""owner0001""
+	}]
+}",No,"{
+  ""code"": ""spot0015"",
+  ""station"": {
+    ""type"": ""RESIDENCE""
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""MONTHLY"",
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907566,
+    ""longitude"": 77.631891
+  },
+  ""address"": {
+    ""doorNo"": ""0001"",
+    ""street"": ""2nd Cross Rd"",
+    ""landmark"": ""Madina masjid"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner0001"",
+    ""firstName"": ""owner0001_first"",
+    ""lastName"": ""owner0001_last"",
+    ""userId"": ""owner0001@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0024,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.638089,
+		""latitude"": 12.912849
+	},
+	""code"": ""spot0006"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0006"",
+		""firstName"": ""owner0006_first"",
+		""lastName"": ""owner0006_last"",
+		""userId"": ""owner0006@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""14th Main Rd"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BDA Complex HSR"",
+		""doorNo"": ""0006""
+	},
+	""station"": {
+		""type"": ""PRIVATE""
+	},
+	""amenities"": [
+		""FLEXIBLE_ACCESS_HOURS""
+	],
+	""paymentModes"": [
+		""CASH""
+	],
+	""timeDurations"": [
+		""MONTHLY""
+	],
+	""size"": ""SUV"",
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0006"",
+		""ownerId"": ""owner0006""
+	}]
+}",No,"{
+  ""code"": ""spot0006"",
+  ""station"": {
+    ""type"": ""PRIVATE""
+  },
+  ""amenities"": [
+    ""FLEXIBLE_ACCESS_HOURS""
+  ],
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""timeDurations"": [
+    ""MONTHLY""
+  ],
+  ""geoLocation"": {
+    ""latitude"": 12.912849,
+    ""longitude"": 77.638089
+  },
+  ""address"": {
+    ""doorNo"": ""0006"",
+    ""street"": ""14th Main Rd"",
+    ""landmark"": ""BDA Complex HSR"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SUV"",
+  ""owner"": {
+    ""id"": ""owner0006"",
+    ""firstName"": ""owner0006_first"",
+    ""lastName"": ""owner0006_last"",
+    ""userId"": ""owner0006@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0025,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.632448,
+		""latitude"": 12.906627
+	},
+	""code"": ""spot0003"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0003"",
+		""firstName"": ""owner0003_first"",
+		""lastName"": ""owner0003_last"",
+		""userId"": ""owner0003@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""No. 10"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Totalgass"",
+		""doorNo"": ""0003""
+	},
+	""station"": {
+		""type"": ""PRIVATE""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0003"",
+		""ownerId"": ""owner0003""
+	}]
+}",No,"{
+  ""code"": ""spot0003"",
+  ""station"": {
+    ""type"": ""PRIVATE""
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.906627,
+    ""longitude"": 77.632448
+  },
+  ""address"": {
+    ""doorNo"": ""0003"",
+    ""street"": ""No. 10"",
+    ""landmark"": ""Totalgass"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner0003"",
+    ""firstName"": ""owner0003_first"",
+    ""lastName"": ""owner0003_last"",
+    ""userId"": ""owner0003@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0026,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.632666,
+		""latitude"": 12.906524
+	},
+	""code"": ""spot0004"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0004"",
+		""firstName"": ""owner0004_first"",
+		""lastName"": ""owner0004_last"",
+		""userId"": ""owner0004@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""Hp Petrol-mangampalya"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""Hp Petrol-mangampalya"",
+		""doorNo"": ""0004""
+	},
+	""station"": {
+		""type"": ""PRIVATE""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0004"",
+		""ownerId"": ""owner0004""
+	}]
+}",No,"{
+  ""code"": ""spot0004"",
+  ""station"": {
+    ""type"": ""PRIVATE""
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.906524,
+    ""longitude"": 77.632666
+  },
+  ""address"": {
+    ""doorNo"": ""0004"",
+    ""street"": ""Hp Petrol-mangampalya"",
+    ""landmark"": ""Hp Petrol-mangampalya"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner0004"",
+    ""firstName"": ""owner0004_first"",
+    ""lastName"": ""owner0004_last"",
+    ""userId"": ""owner0004@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0027,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.631112,
+		""latitude"": 12.907705
+	},
+	""code"": ""spot0005"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0005"",
+		""firstName"": ""owner0005_first"",
+		""lastName"": ""owner0005_last"",
+		""userId"": ""owner0005@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""BMS Residency"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""BMS Residency"",
+		""doorNo"": ""0005""
+	},
+	""amenities"": [
+		""ROOF"",
+		""FLEXIBLE_ACCESS_HOURS""
+	],
+	""paymentModes"": [
+		""CASH""
+	],
+	""timeDurations"": [
+		""MONTHLY""
+	],
+	""station"": {
+		""type"": ""RESIDENCE""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0005"",
+		""ownerId"": ""owner0005""
+	}]
+}",No,"{
+  ""code"": ""spot0005"",
+  ""station"": {
+    ""type"": ""RESIDENCE""
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""FLEXIBLE_ACCESS_HOURS""
+  ],
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""timeDurations"": [
+    ""MONTHLY""
+  ],
+  ""geoLocation"": {
+    ""latitude"": 12.907705,
+    ""longitude"": 77.631112
+  },
+  ""address"": {
+    ""doorNo"": ""0005"",
+    ""street"": ""BMS Residency"",
+    ""landmark"": ""BMS Residency"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner0005"",
+    ""firstName"": ""owner0005_first"",
+    ""lastName"": ""owner0005_last"",
+    ""userId"": ""owner0005@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0028,create parking spot,POST,/parkingspot?newId=true,"{
+	""geoLocation"": {
+		""longitude"": 77.63256,
+		""latitude"": 12.910638
+	},
+	""code"": ""spot0007"",
+	""description"": ""testing"",
+	""owner"": {
+		""id"": ""owner0007"",
+		""firstName"": ""owner0007_first"",
+		""lastName"": ""owner0007_last"",
+		""userId"": ""owner0007@pod.com""
+	},
+	""address"": {
+		""city"": ""Bengaluru"",
+		""country"": ""ind"",
+		""state"": ""Karnataka"",
+		""street"": ""Plot No.1158"",
+		""zipCode"": "" Karnataka 560102"",
+		""landmark"": ""South inn"",
+		""doorNo"": ""0007""
+	},
+	""station"": {
+		""type"": ""RESTAURANT""
+	},
+	""photos"": [{
+		""fileName"": ""/root/file/photo.png"",
+		""id"": ""0007"",
+		""ownerId"": ""owner0007""
+	}]
+}",No,"{
+  ""code"": ""spot0007"",
+  ""station"": {
+    ""type"": ""RESTAURANT""
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.910638,
+    ""longitude"": 77.63256
+  },
+  ""address"": {
+    ""doorNo"": ""0007"",
+    ""street"": ""Plot No.1158"",
+    ""landmark"": ""South inn"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""owner"": {
+    ""id"": ""owner0007"",
+    ""firstName"": ""owner0007_first"",
+    ""lastName"": ""owner0007_last"",
+    ""userId"": ""owner0007@pod.com""
+  },
+  ""description"": ""testing""
+}",201,This spot is created with out spot id and station id
+P0029,Search parking spot,POST,/parkingspot/_search,"{
+  ""amenities"": [
+    ""ROOF""
+  ],
+  ""distanceUnit"": ""METERS"",
+  ""geoLocation"": {
+    ""latitude"": 12.907685,
+    ""longitude"": 77.631625
+  },
+  ""paymentModes"": [
+    ""CASH""
+  ],
+  ""radius"": 5000
+
+}",No,"
+{
+  ""items"": [
+    {
+      ""type"": ""RESIDENCE"",
+      ""geoLocation"": {
+        ""latitude"": 12.907705,
+        ""longitude"": 77.631112
+      },
+      ""address"": {
+        ""doorNo"": ""0005"",
+        ""street"": ""BMS Residency"",
+        ""landmark"": ""BMS Residency"",
+        ""city"": ""Bengaluru"",
+        ""state"": ""Karnataka"",
+        ""country"": ""ind"",
+        ""zipCode"": "" Karnataka 560102""
+      },
+      ""amenities"": [
+        ""ROOF"",
+        ""FLEXIBLE_ACCESS_HOURS""
+      ],
+      ""distance"": 0.05570838279938445,
+      ""totalSpots"": 1
+    },
+    {
+      ""id"": ""station_1003"",
+      ""type"": ""RESIDENCE"",
+      ""geoLocation"": {
+        ""latitude"": 12.907471,
+        ""longitude"": 77.632799
+      },
+      ""address"": {
+        ""doorNo"": ""0036"",
+        ""street"": ""5th Main Rd"",
+        ""landmark"": ""Salarpuria Serenity Apartment"",
+        ""city"": ""Bengaluru"",
+        ""state"": ""Karnataka"",
+        ""country"": ""ind"",
+        ""zipCode"": "" Karnataka 560102""
+      },
+      ""amenities"": [
+        ""ROOF"",
+        ""SECURITY"",
+        ""SUPPORT_FOR_WHEELCHAIR"",
+        ""FLEXIBLE_ACCESS_HOURS"",
+        ""EV_CHARGING""
+      ],
+      ""distance"": 0.12959513324859437,
+      ""singleSpotId"": ""spot_1008"",
+      ""totalSpots"": 2
+    },
+    {
+      ""id"": ""station_1005"",
+      ""type"": ""RESTAURANT"",
+      ""geoLocation"": {
+        ""latitude"": 12.912249,
+        ""longitude"": 77.637953
+      },
+      ""address"": {
+        ""doorNo"": ""0011"",
+        ""street"": ""No 1"",
+        ""landmark"": ""McDonald's hsr"",
+        ""city"": ""Bengaluru"",
+        ""state"": ""Karnataka"",
+        ""country"": ""ind"",
+        ""zipCode"": "" Karnataka 560102""
+      },
+      ""amenities"": [
+        ""ROOF"",
+        ""SECURITY"",
+        ""SUPPORT_FOR_WHEELCHAIR"",
+        ""FLEXIBLE_ACCESS_HOURS"",
+        ""EV_CHARGING""
+      ],
+      ""distance"": 0.8541538819648445,
+      ""singleSpotId"": ""spot_1010"",
+      ""totalSpots"": 1
+    }
+  ],
+  ""totalSize"": 3
+}",200,Searching  parking spots
+P0030,Get spot by ID,GET,/parkingspot/spot_1008,,No,"{
+  ""id"": ""spot_1008"",
+  ""code"": ""spot_1008"",
+  ""station"": {
+    ""id"": ""station_1003"",
+    ""type"": ""RESIDENCE"",
+    ""attachmentIds"": [
+      ""/path/to/station1003.jpg""
+    ]
+  },
+  ""amenities"": [
+    ""ROOF"",
+    ""SECURITY"",
+    ""SUPPORT_FOR_WHEELCHAIR"",
+    ""FLEXIBLE_ACCESS_HOURS"",
+    ""EV_CHARGING""
+  ],
+  ""paymentModes"": [
+    ""CASH"",
+    ""UPI"",
+    ""CARD""
+  ],
+  ""timeDurations"": [
+    ""HOURLY""
+  ],
+  ""price"": {
+    ""HRS_UPTO_2"": 30,
+    ""HRS_2_TO_5"": 40,
+    ""HRS_5_TO_10"": 50,
+    ""HRS_UPTO_24"": 100
+  },
+  ""geoLocation"": {
+    ""latitude"": 12.907471,
+    ""longitude"": 77.632799
+  },
+  ""address"": {
+    ""doorNo"": ""0036"",
+    ""street"": ""5th Main Rd"",
+    ""landmark"": ""Salarpuria Serenity Apartment"",
+    ""city"": ""Bengaluru"",
+    ""state"": ""Karnataka"",
+    ""country"": ""ind"",
+    ""zipCode"": "" Karnataka 560102""
+  },
+  ""size"": ""SEDAN"",
+  ""owner"": {
+    ""id"": ""owner_1001"",
+    ""firstName"": ""owner_1001_first"",
+    ""lastName"": ""owner_1001_last"",
+    ""userId"": ""owner_1001@pod.com""
+  },
+  ""description"": ""This spot is created for testing with all the amenities,payment mode, time duration,price for time duration and size""
+}",200,"Get spot by ID , get call"

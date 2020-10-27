@@ -34,4 +34,5 @@ def write_to_html(filepath):
     f = open(filename, 'w')
     f.write(outhtml)
     f.close()
+    # print("TRACE >>>>>>>>>>>> closed html")
     return pd.read_csv(filepath)

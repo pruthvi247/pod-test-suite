@@ -16,7 +16,7 @@
 > python3 pod_api_test_suite/test_invoker.py --end_point_ip=172.20.10.7 --output_report_path=/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/test_report.csv --port=8082 --input_file_path=/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/parkingspot_service_test_cases.csv --driver_path=/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_api_test_suite/drivers/api_service_driver.py
 
 // Running Seed script
->  python pod_api_test_suite/utils/seed_data_prep.py
+>  python3 pod_api_test_suite/utils/seed_data_prep.py
 
 // Running Test data prep
 >python3 pod_api_test_suite/utils/test_data_prep.py
@@ -31,3 +31,5 @@ pip3 install -r r equirement.txt
 pytest examples/pytest_fixture_example.py -sv
         - s -> show prints
         -v  -> verbose
+
+

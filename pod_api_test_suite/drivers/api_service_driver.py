@@ -54,7 +54,6 @@ def test_sample(input_value):
 
         ip_payload = input_value[1]["API_INPUT"]
 
-
         if str(input_value[1]["DEPENDENT"]).lower() != "no":
             print("<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>")
             print(input_value[0])
@@ -62,6 +61,10 @@ def test_sample(input_value):
 
         http_output = https.invoke_post_call(ip=URL_PREFIX, url=ip_url,
                                              headers=HEADERS, input_palyload=ip_payload)
+        print("TRACE >>>>>>>>>>>>>>>>>>>>>>>>>>")
+        print(http_output.json())
+        print(type(http_output.json()))
+
         response_dict[str(input_value[0])] = json.dumps(http_output.json())
 
         # # compares expected json with http output

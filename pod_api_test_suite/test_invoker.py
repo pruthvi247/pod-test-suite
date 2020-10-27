@@ -2,6 +2,7 @@ import sys,os
 import subprocess
 import json
 import webbrowser
+import time
 sys.path.insert(0, os.path.abspath(os.path.abspath('')))
 
 from pod_api_test_suite.utils.api_arg_parsing import CliArgParse
@@ -37,10 +38,20 @@ subprocess.call(["pytest",cmd, "-sv"])
 
 # ### this open test report in default browser
 webbrowser.open('file://' + os.path.realpath(OUTPUT_REPORT_PATH.replace('.csv', '.html')))
+# ### to kill web browser [source : https://stackoverflow.com/questions/13188981/close-terminate-web-browser-using-python-3]
 
+# p = subprocess.Popen(["chrome", "'file://' + os.path.realpath(OUTPUT_REPORT_PATH.replace('.csv', '.html'))"])
+# time.sleep(600)
+# p.kill()
+
+# ### for mac os to kill chrome
+#  ###### os.system("killall -9 'Google Chrome'")
 mongodb_url = "mongodb://172.20.10.7:27017/"
 db_name = 'test'
 collection = "parkingSpot"
 
 # ### used to clean up the collection, comment it if not needed
-clean_mongo_collection(mongo_db_url=mongodb_url,db_name=db_name,collection_name=collection)
+# clean_mongo_collection(mongo_db_url=mongodb_url,db_name=db_name,collection_name=collection)
+# terminate session here
+sys.exit()
+

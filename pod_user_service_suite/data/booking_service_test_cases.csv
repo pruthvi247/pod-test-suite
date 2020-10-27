@@ -1,5 +1,5 @@
-ID,TESTCASE,METHOD,URL,URL_DEPENDENT,API_INPUT,API_INPUT_DEPENDENT,EXPECTED_OUTPUT,EXPECTED_OUTPUT_DEPENDENT,EXPECTED_STATUS_CODE,NOTES
-B0001,post booking,POST,/booking,,"{
+ID,TESTCASE,METHOD,URL,API_INPUT,API_INPUT_DEPENDENT,EXPECTED_OUTPUT,EXPECTED_OUTPUT_DEPENDENT,EXPECTED_STATUS_CODE,NOTES
+B0001,post booking,POST,/booking,"{
 ""code"": ""book123"",
 ""customer"": {
   ""userId"": ""cust101""
@@ -33,7 +33,7 @@ B0001,post booking,POST,/booking,,"{
 	""current_test_case_key"": [""parkingSpotId""],
 ""dependent_test_case_outPutPath"":""/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/test_report_http_resp.csv""
 }",201,create spot booking
-B0002,post booking,POST,/booking,,"{
+B0002,post booking,POST,/booking,"{
 ""code"": ""book123"",
 ""customer"": {
   ""userId"": ""cust101""
@@ -54,7 +54,7 @@ B0002,post booking,POST,/booking,,"{
   ""code"": ""DUPLICATE"",
   ""message"": ""There is already a booking available for the given booking period""
 }",No,400,Should throw error saying booking is done for the given details as we have booked it in Boo01 test case
-B0003,post booking,POST,/booking,,"{
+B0003,post booking,POST,/booking,"{
 ""code"": ""book123"",
 ""customer"": {
   ""userId"": ""cust101""
@@ -70,7 +70,7 @@ B0003,post booking,POST,/booking,,"{
   ""code"": ""INVALID_INPUT"",
   ""message"": ""The difference between the start and end time should be greater than the mandatory interval""
 }",No,400,this test case shoud not allow booking to be created because difference between the start and end time is not greater than madatory interval
-B0004,get booking by customer id,GET,/booking?customerId=cust101,,,NO,"{
+B0004,get booking by customer id,GET,/booking?customerId=cust101,,NO,"{
   ""items"": [
     {      ""code"": ""book123"",
       ""owner"": {
@@ -92,12 +92,7 @@ B0004,get booking by customer id,GET,/booking?customerId=cust101,,,NO,"{
 	""current_test_case_key"": [""items"",0,""parkingSpotId""],
 ""dependent_test_case_outPutPath"":""/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/test_report_http_resp.csv""
 }",200,should get the booking we created in B0001
-B0005,get booking by parking spot id,GET,/booking/_byParkingSpot?parkingSpotId=ae755f60-c591-48d7-8723-32bc057e490e,"{
-	""dependent_test_case_id"": ""P0001"",
-	""dependent_test_case_key"": [""id""],
-	""current_test_case_key"": [""parkingSpotId""],
-""dependent_test_case_outPutPath"":""/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/test_report_http_resp.csv""
-}",,No,"{
+B0005,get booking by parking spot id,GET,/booking/_byParkingSpot?parkingSpotId=ae755f60-c591-48d7-8723-32bc057e490e,,No,"{
   ""items"": [
     {      ""code"": ""book123"",
       ""owner"": {

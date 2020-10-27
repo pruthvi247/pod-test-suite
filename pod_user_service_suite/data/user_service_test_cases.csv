@@ -1,0 +1,9 @@
+ID,TESTCASE,METHOD,URL,API_INPUT,DEPENDENT,EXPECTED_OUTPUT,EXPECTED_STATUS_CODE,NOTES
+U0001,Create user,POST,/user/register,"{
+  ""firebaseId"": ""firebase0001"",
+  ""phoneNumber"": ""9916893441""
+}",No,"{
+  ""phoneNumber"": ""9916893441"",
+  ""firebaseId"": ""firebase0001"",
+  ""newUser"": true
+}",201,

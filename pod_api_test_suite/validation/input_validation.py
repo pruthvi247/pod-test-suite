@@ -14,6 +14,8 @@ def validate_input_csv_format(pd_df):
 
 def is_json(myjson):
     """This methods returns true is the string is valid json, otherwise returns false"""
+    # print("TRACE >>>>>>>>>>>>>>>>")
+    # print(myjson)
     try:
         json_object = json.loads(myjson)
     except ValueError as e:
@@ -28,8 +30,7 @@ def _validate_json(pd_df):
         # # this check we are doing because for get calls input json will be empty, as it is pandas df , we are checking for nan value
         if not pd.isna(row[str(ColumnHeaders.API_INPUT.name)]):
             # print(f">>>>>>>>>>>>>><<<<<<<<<<<<< iput col {row['ID']}")
-            assert is_json(row[str(
-                ColumnHeaders.API_INPUT.name)]), f"Input of  test id : {row[str(ColumnHeaders.ID.name)]} is not in json format "
+            assert is_json(row[str(ColumnHeaders.API_INPUT.name)]), f"Input of  test id : {row[str(ColumnHeaders.ID.name)]} is not in json format "
         assert is_json(row[str(
             ColumnHeaders.EXPECTED_OUTPUT.name)]), f"Expected output of  test id : {row[str(ColumnHeaders.ID.name)]} is not in json format "
 
