@@ -123,21 +123,24 @@ if __name__ == "__main__":
 
     # input_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
     # output_file_path = '/Users/pruthvikumar/Documents/workspace/eclipse-work-space/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
-    input_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
-    output_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
+    # input_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
+    input_file_path = '/Users/pruthvikumar/Documents/workspace/a1m/pod-test-suite/pod_user_service_suite/data/geoPoints_users.csv'
+    output_file_path = '/Users/pruthvikumar/Documents/workspace/a1m/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
+    # output_file_path = '/home/avatar/Documents/pythonProjects/a1m/pod-test-suite/pod_user_service_suite/data/data_prep_new.csv'
      ### /home/avatar/Documents/pythonProjects/a1m/pod-test-suite // ubuntu path
 
 
     #### Below step is to create a json from the raw input geo file -eoPoints_users.cs
     #### we should un comment it when we want to create a different json structure
-    output_dict = prepare_parkingSpot_data(input_file_path)
-    write_to_csv(output_file_path, output_dict)
+    # output_dict = prepare_parkingSpot_data(input_file_path)
+    # write_to_csv(output_file_path, output_dict)
 
     #### Below steps are to create parking spots in DB using parking spot API
     # end_point = 'http://192.168.0.194:8080/parkingspot'
     # end_point = 'http://192.168.0.177:8082/parkingspot'
     # end_point = 'http://192.168.0.177:8080/parkingspot'
-    end_point = 'http://172.20.10.7:8082/parkingspot?newId=true'
+    # end_point = 'http://192.168.0.177:8082/parkingspot?newId=true'
+    end_point = 'http://192.168.0.177:8080/parkingspot?newId=true'
     Headers = {"Content-Type": "application/json"}
 
     post_json(output_file_path, 'output', end_point, Headers)
