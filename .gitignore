@@ -20,7 +20,9 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+# virtual env
+a1testenv/
+*.htm
 # Eclipse related
 .classpath
 .project
