@@ -1,0 +1,165 @@
+openapi: 3.0.0
+info:
+  title: Sample Service
+  version: '0.2.1'
+  description: >
+    Sample Description
+servers:
+  - description: Local link
+    # we use v1 because "v0" is just for internal use.
+    url: /api/v1
+paths:
+  /sample-service:
+    post:
+      summary: request to check a GCP reverse image search result
+      operationId: performReverseImageCheck
+      description: >
+        Test
+      responses:
+        '200':
+          description: Images succesfully processed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageSimilarityResponse'
+        '400':
+          description: Invalid input request, or invalid linked GCP response
+        '401':
+          description: Invalid creds
+        '408':
+          description: Internal download timeout
+        '422':
+          description: Unable to process any URL in request succesfully
+        '429':
+          description: Max number of concurrent downloads reached
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReverseImageCheckRequest'
+components:
+  schemas:
+    ReverseImageCheckRequest:
+      type: object
+      description: >
+        Primary request payload for this service.  All non-required properties herein
+        will be assumed to have sensible defaults configured on the server.
+      required:
+        - image
+        - serviceResponses
+      properties:
+        image:
+          $ref: '#/components/schemas/InputImage'
+        serviceResponses:
+          # TODO: should this be an arbitrary string-to-string mapping?
+          # Does this save us any work in Java?
+          type: object
+          required:
+            - gcpReverseImageSearchResponse
+          properties:
+            gcpReverseImageSearchResponse:
+              type: string
+              description: >
+                Key of object in input bucket. Object is a JSON object coforming
+                to the appropriate schema for a GCP image search response.
+        decisionParams:
+          $ref: '#/components/schemas/DecisionParams'
+    ScoreBucketThreshold:
+      type: object
+      description: >
+        Threshold method that uses explicit score buckets to group responses.
+        The `thresholdType` property is reserved as a discriminator to permit different
+        kinds of threshold types in the future.
+      required:
+        - thresholdType
+        - s1
+        - s2
+      properties:
+        thresholdType:
+          type: string
+          enum: [ScoreBucketThreshold]
+        s1:
+          type: number
+          description: Scores below this value will be a MATCH
+        s2:
+          type: number
+          description: Scores above this value will be a MISMATCH
+    ImageSimilarityResponse:
+      type: object
+      required:
+        - decision
+        - decisionImage
+        - decisionParams
+      properties:
+        decision:
+          type: string
+          enum:
+            - MATCH
+            - MISMATCH
+            - NO_DECISION
+          description: Decision class name given to image
+        decisionImage:
+          $ref: '#/components/schemas/DownloadedImage'
+        # TODO: the rest is informational stuff that might be better included as
+        # event data.
+        downloadedImages:
+          type: array
+          items:
+            $ref: '#/components/schemas/DownloadedImage'
+        skippedImages:
+          type: array
+          items:
+            $ref: '#/components/schemas/DownloadedImage'
+        decisionParams:
+          $ref: '#/components/schemas/DecisionParams'
+    DecisionParams:
+      type: object
+      properties:
+        usePartialMatches:
+          type: boolean
+          description: whether to consider partial matches in this check
+        threshold:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScoreBucketThreshold'
+    PredictionItem:
+      type: object
+      properties:
+        score:
+          type: integer
+          description: similarity score returned by comparison algorithm
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: degree of confidence in descision
+    InputImage:
+      type: object
+      required:
+        # TODO: configure a schema validator in CI
+        - imageDocumentGuid
+      properties:
+        imageDocumentGuid:
+          type: string
+          description: Object key in input bucket for target image
+        imageClassifier:
+          type: string
+          description: e.g. FRONTSIDE, BACKSIDE
+    DownloadedImage:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+          format: uri
+          description: URL downloaded, or not
+        foundLocation:
+          type: string
+          description: internet, s3, cache, etc.; reserved for future use
+        downloadTime:
+          type: number
+          description: time to download image in seconds
+        score:
+          type: number
+          description: Match score

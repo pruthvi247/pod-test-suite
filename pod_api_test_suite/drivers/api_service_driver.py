@@ -1,3 +1,7 @@
+### exmple to read csv using generators
+### https://livecodestream.dev/post/how-to-use-generator-and-yield-in-python/
+### https://stackoverflow.com/questions/38584494/python-generator-to-read-large-csv-file
+
 import sys
 import pytest
 import pandas as pd

@@ -32,4 +32,7 @@ pytest examples/pytest_fixture_example.py -sv
         - s -> show prints
         -v  -> verbose
 
+### <i class="fas fa-puzzle-piece" aria-hidden="true"></i> Puzzle Icon
+{: #puzzle}
 
+Click on the @icn-camera icon to take a screen shot.
