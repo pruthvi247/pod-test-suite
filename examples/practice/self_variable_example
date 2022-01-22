@@ -1,0 +1,70 @@
+class employee:
+    '''description of your class- doc string'''
+
+    def __init__(self, enam, eno):
+        self.ename = enam
+        self.eno = eno
+
+    def info(self):
+        eno = 888
+        print(eno)
+        print(self.eno)
+        print(self.ename)
+abc=56
+class Student:
+    stat_test = 66
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+    @classmethod
+    def dumb(cls):
+        cls.stat_test=333
+
+    def info(self,mark):
+        self.marks = mark
+        global abc
+        abc=777
+        print(abc)
+class Geeks:
+    def __init__(self):
+        self.inner = self.InnerGeek()
+    def display(self):
+        print("outer display")
+        self.inner.display()
+
+    @property
+    def age(self):
+        return "this is getter age"
+    @age.setter
+    def age(self,a):
+        print("setting age...")
+        return "this is setter age"
+    class InnerGeek:
+        def __init__(self):
+            print("inner geek")
+        def display(self):
+            print("inner display")
+
+if __name__ == "__main__":
+     e = employee('firstname','420')
+     f = employee
+     e.info()
+     a1 = f('second name','6093')
+     a1.info()
+
+     s1 = Student('ravi', 1234)
+     s2 = Student('madhu', 1235)
+     print(s1.info(50))
+     print(s1.marks)
+     print(Student.stat_test)
+     Student.stat_test =77
+     Student.dumb()
+     print(Student.stat_test)
+     print(s2.stat_test)
+     print('<><')
+     print(abc)
+     g = Geeks()
+     g.age=""
+     print(g.age)
+     g.display()
+     g.inner.display()

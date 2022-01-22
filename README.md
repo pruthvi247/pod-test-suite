@@ -25,7 +25,7 @@ python3 -m venv env
 source ./env/bin/activate
 python -m pip install -- user pipenv
 
-pip3 install -r r equirement.txt
+pip3 install -r requirement.txt
 
 
 pytest examples/pytest_fixture_example.py -sv
